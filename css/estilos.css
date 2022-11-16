@@ -45,7 +45,7 @@ html{
     padding: 10px 20px;
 }
 
-#inicio .contenido header .contenido-header .h1{
+#inicio .contenido header .contenido-header h1{
     text-align: center;
     color: #ff5080;
 }
