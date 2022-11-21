@@ -296,6 +296,13 @@ html{
     animation: progreso6 2s forwards;
 }
 
+.contenedor-skills .skill .barra .barra-progreso7 {
+    background-color: #fff;
+    width: 40%;
+    height: 6px;
+    animation: progreso6 2s forwards;
+}
+
 /* ANIMACIONES DE LAS BARRAS */
 
 @keyframes progreso1{
@@ -326,6 +333,11 @@ html{
 @keyframes progreso6{
     0%{width: 0;}
     100%{width: 60%;}
+}
+
+@keyframes progreso7{
+    0%{width: 0;}
+    100%{width: 40%;}
 }
 
 /* SECCION PORTFOLIO */
