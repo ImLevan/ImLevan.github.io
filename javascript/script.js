@@ -40,6 +40,9 @@ function efectoHabilidades(){
         document.getElementById("html").classList.add("barra-progreso5");
         document.getElementById("js").classList.add("barra-progreso6");
         document.getElementById("c").classList.add("barra-progreso7");
+        document.getElementById("testing").classList.add("barra-progreso8");
+        document.getElementById("git").classList.add("barra-progreso9");
+        document.getElementById("ts").classList.add("barra-progreso10");
     }
 }
 

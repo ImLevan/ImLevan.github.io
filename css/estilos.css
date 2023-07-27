@@ -285,14 +285,14 @@ html{
 
 .contenedor-skills .skill .barra .barra-progreso5 {
     background-color: #fff;
-    width: 50%;
+    width: 90%;
     height: 6px;
     animation: progreso5 2s forwards;
 }
 
 .contenedor-skills .skill .barra .barra-progreso6 {
     background-color: #fff;
-    width: 60%;
+    width: 80%;
     height: 6px;
     animation: progreso6 2s forwards;
 }
@@ -302,6 +302,27 @@ html{
     width: 40%;
     height: 6px;
     animation: progreso7 2s forwards;
+}
+
+.contenedor-skills .skill .barra .barra-progreso8 {
+    background-color: #fff;
+    width: 70%;
+    height: 6px;
+    animation: progreso8 2s forwards;
+}
+
+.contenedor-skills .skill .barra .barra-progreso9 {
+    background-color: #fff;
+    width: 80%;
+    height: 6px;
+    animation: progreso9 2s forwards;
+}
+
+.contenedor-skills .skill .barra .barra-progreso10 {
+    background-color: #fff;
+    width: 80%;
+    height: 6px;
+    animation: progreso10 2s forwards;
 }
 
 /* ANIMACIONES DE LAS BARRAS */
@@ -328,12 +349,12 @@ html{
 
 @keyframes progreso5{
     0%{width: 0;}
-    100%{width: 50%;}
+    100%{width: 90%;}
 }
 
 @keyframes progreso6{
     0%{width: 0;}
-    100%{width: 60%;}
+    100%{width: 80%;}
 }
 
 @keyframes progreso7{
@@ -341,9 +362,24 @@ html{
     100%{width: 40%;}
 }
 
+@keyframes progreso8{
+    0%{width: 0;}
+    100%{width: 70%;}
+}
+
+@keyframes progreso9{
+    0%{width: 0;}
+    100%{width: 80%;}
+}
+
+@keyframes progreso10{
+    0%{width: 0;}
+    100%{width: 80%;}
+}
+
 /* SECCION PORTFOLIO */
 
-#portfolio {
+/* #portfolio {
     max-width: 1100px;
     padding: 100px 0;
     margin: auto;
@@ -400,7 +436,82 @@ filter: grayscale(0);
 #portfolio .fila .proyecto:hover .info {
     opacity: 1;
     bottom: 0;
+} */
+
+/* SECCION PORTFOLIO */
+
+#portfolio {
+    max-width: 1100px;
+    padding: 100px 0;
+    margin: auto;
 }
+
+#portfolio .titulo-seccion {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #ff5080;
+    text-decoration: underline;
+    text-decoration-color: #d3d3d3;
+    text-decoration-thickness: 5px;
+}
+
+#portfolio .fila-proyectos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+#portfolio .fila-proyectos .proyecto {
+    max-width: 700px;
+    border: 1px solid #000;
+    margin: 20px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#portfolio .fila-proyectos .proyecto .imagen-proyecto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: .5s;
+}
+
+#portfolio .fila-proyectos .proyecto:hover .imagen-proyecto img {
+    filter: blur(16px);
+}
+
+#portfolio .fila-proyectos .proyecto .info-proyecto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.904);
+    width: 90%;
+    padding: 10px;
+    opacity: 0;
+    transition: .5s;
+}
+
+#portfolio .fila-proyectos .proyecto:hover .info-proyecto {
+    opacity: 1;
+}
+
+.repositorio-github a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 46px;
+}
+
+.repositorio-github a:hover{
+    color: darkblue;
+}
+
+
 
 /* SECCION CONTACTO */
 
@@ -573,6 +684,22 @@ footer a:hover{
         margin: 10px auto;
         max-width: 80%;
     }
+
+    #portfolio .fila-proyectos .proyecto {
+        max-width: 100%; /* El ancho será el 100% del contenedor padre */
+        margin: 20px 0; /* Elimina el margen horizontal para ajustarse al ancho */
+    }
+
+    #portfolio .fila-proyectos .proyecto .info-proyecto {
+        width: 100%; /* El ancho será el 100% del contenedor padre */
+        font-size: 10px; /* Ajusta el tamaño del texto para adaptarlo a pantallas más pequeñas */
+        padding: 5px; /* Ajusta el espacio interno para que el texto no se desborde */
+    }
+
+    .repositorio-github a{
+        font-size: 26px;
+    }
+
 
     #contacto {
         padding: 50px 15px;
