@@ -18,7 +18,7 @@
 } */
 
 const getWeatherData = async (city)=>{
-    fetch(`http://api.opencagedata.com/geocode/v1/json?q=${city}&key=56cf18067fb74c71b0309cb9404adb61`)
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${city}&key=56cf18067fb74c71b0309cb9404adb61`)
     .then(response => {return response.json()})
     .then(data => {
         fetchAWeather(data, city);
@@ -33,7 +33,7 @@ const getWeatherData = async (city)=>{
 } 
 
 const fetchAWeather = (res, city) => {
-    fetch(`http://api.weatherunlocked.com/api/current/${res.results[0].geometry.lat},${res.results[0].geometry.lng}?app_id=09a1f657&app_key=1c643a7f14caa57bdf14e0f81bc7e445`)
+    fetch(`https://api.weatherunlocked.com/api/current/${res.results[0].geometry.lat},${res.results[0].geometry.lng}?app_id=09a1f657&app_key=1c643a7f14caa57bdf14e0f81bc7e445`)
     .then(response => {return response.json()})
     .then(data => {
     console.log(data)
@@ -45,7 +45,7 @@ const fetchAWeather = (res, city) => {
 }
 
 const fetchAForecastWeather = (res, city) => {
-    fetch(`http://api.weatherunlocked.com/api/forecast/${res.results[0].geometry.lat},${res.results[0].geometry.lng}?app_id=09a1f657&app_key=1c643a7f14caa57bdf14e0f81bc7e445`)
+    fetch(`https://api.weatherunlocked.com/api/forecast/${res.results[0].geometry.lat},${res.results[0].geometry.lng}?app_id=09a1f657&app_key=1c643a7f14caa57bdf14e0f81bc7e445`)
     .then(response => {return response.json()})
     .then(data => {
     console.log(data)
