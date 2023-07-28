@@ -18,10 +18,9 @@
 } */
 
 const getWeatherData = async (city)=>{
-    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${city}&key=56cf18067fb74c71b0309cb9404adb61`)
+    fetch(`http://api.opencagedata.com/geocode/v1/json?q=${city}&key=56cf18067fb74c71b0309cb9404adb61`)
     .then(response => {return response.json()})
     .then(data => {
-        console.log(data)
         fetchAWeather(data, city);
         fetchAForecastWeather(data, city);
     })
