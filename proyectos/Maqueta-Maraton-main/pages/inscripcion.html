@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscripcion - Maraton</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <script src="../js/jquery.3.6.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- SECCION HEADER -->
+    <section class="head">
+        <header>
+            <div class="contenido-header">
+                <div class="head-logo">
+                    <a href="../index.html" class="logo">
+                        <img src="../img/logo/salud-mapas-ico2.png" alt="logo" class="img-logo">
+                    </a>
+                </div>
+                <nav id="nav" class="">
+                    <ul id="links">
+                        <li><a href="../index.html" class="seleccionado" >INICIO</a></li>
+                        <li><a href="inscripcion.html" >INSCRIPCION</a></li>
+                        <li><a href="centrosdesalud.html" >CENTROS DE SALUD</a></li>
+                        <li><a href="maraton.html" >MARATON</a></li>
+                        <li><a href="login.html" id="login_id">LOGIN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <!-- SECCION INICIO -->
+
+    <section class="home">
+        <div class="container-fuild">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="home-image" id="formulario-logo">
+                        <img src="../img/logo/Formulari.png" alt="formulario" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 home-title">
+                    <h2 class="text-uppercase pt-5">
+                        <span>Inscripcion</span>
+                    </h2>
+                    <div class="paragraph py-4 w-75">
+                        <form method="post" id="form">
+                            <div class="form_section">
+                                <input type="text" id="name" name="user_name" class="form_input"  placeholder="Escriba su nombre">
+                            </div>
+                            <div class="form_section"></div>
+                                <input type="text" id="last-name" name="user_last-name" class="form_input"  placeholder="Escriba su apellido">
+                            </div>
+                            <div class="form_section">
+                                <input type="number" name="dni" id="dni" class="form_input"  placeholder="Escriba su DNI">
+                            </div>
+                            <div class="form_section">
+                                <input type="number" name="edad" id="edad" class="form_input"  placeholder="Escriba su edad">
+                            </div>
+                            <div class="form_section1">
+                                <label for="sponsor" class="sponsor_propio">Sponsor propio (Si quieres regisistrar tu propio sponsor)</label>
+                            </div>
+                            <div class="form_section1">
+                                <input type="text" name="name_sponsor" id="name_sponsor" class="form_input" placeholder="Escriba el nombre de su sponsor">
+                            </div>
+                            <div class="form_section1">
+                                <textarea name="desc_sponsor" id="desc_sponsor" cols="50" rows="5" class="form_input" placeholder="Escriba la descripcion de su sponsor"></textarea>
+                            </div>
+                            <div class="form_section1">
+                                <input type="submit" class="form_input">
+                            </div>
+                            <p class="warnings" id="warnings"></p>
+                           </form>
+
+                           <script src="../js/login/alertas.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

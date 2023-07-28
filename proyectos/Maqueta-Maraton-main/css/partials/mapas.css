@@ -1,0 +1,42 @@
+/* Inicio Mapa*/
+
+.map {
+    margin-left: 20px;
+}
+
+#map {
+    height: 500px;
+    width: 700px;
+    margin-bottom: 200px;
+}
+
+.map .container-fuild  h3{
+    font-family:"RobotoCondensed";
+}
+
+.map .container-fuild h2{
+    font-family:"RobotoCondensed";
+}
+
+
+.map .container-fuild{
+    display: flex;
+    position: relative;
+}
+
+.map .container-fuild .cont-lista{
+    margin-left: 290px;
+}
+
+.map .container-fuild .cont-lista ul{
+    list-style: none;
+}
+
+.map .container-fuild .cont-lista ul li {
+    padding: 25px 0;
+    font-family:"RobotoCondensed";
+    color: #000;
+
+}
+
+/* Fin Mapa*/

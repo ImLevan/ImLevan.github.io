@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+</head>
+
+<body>
+
+    <section id="header">
+        <a href="index.html"><img src="../img/logo.png" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="shop.html">Comprar</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Sobre Nosotros</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    
+    <section id="hero">
+        <h2>Super ofertas</h2>
+        <h1>En todos los productos</h1>
+        <p>Ahorre más con cupones y hasta un 70 % de descuento! </p>
+        <a href="shop.html">Compra ya</a>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="../img/features/f1.png" alt="">
+            <h6>Envío gratis</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f2.png" alt="">
+            <h6>Pedido en línea</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f3.png" alt="">
+            <h6>Ahorrar dinero</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f4.png" alt="">
+            <h6>Promociones</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f5.png" alt="">
+            <h6>Feliz venta</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f6.png" alt="">
+            <h6>F24/7 Soporte</h6>
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Productos Destacados</h2>
+        <p>Mas Relevantes</p>
+        <div class="pro-container">
+            <div class="pro" id="zapaf1" onclick="window.location.href='sproduct.html';">
+                <img src="../img/products/f1.jpg" alt="">
+                <div class="des">
+                    <span>nike</span>
+                    <h5>Nike Air Max Excee</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$43199</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapaf2">
+                <img src="../img/products/f2.jpg" alt="">
+                <div class="des">
+                    <span id="spanf2">nike</span>
+                    <h5 id="nombref2">Nike Air Force 1 Blancas</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4 id="preciof2">$32499</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapaf3">
+                <img src="../img/products/f3.jpg" alt="">
+                <div class="des">
+                    <span>nike</span>
+                    <h5>Nike Downshifter 11</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$27499</h4>
+                </div>
+                <a href="sproduct.html" onclick="sproduct(zapaf3)"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapaf4">
+                <img src="../img/products/f4.jpg" alt="">
+                <div class="des">
+                    <span>nike</span>
+                    <h5>Nike Air Zoom Pegasus</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$39999</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapaf5">
+                <img src="../img/products/f5.jpg" alt="">
+                <div class="des">
+                    <span>puma</span>
+                    <h5>Puma Caven Blanca</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$21199</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapaf6">
+                <img src="../img/products/f6.jpg" alt="">
+                <div class="des">
+                    <span>puma</span>
+                    <h5>Puma Caven Tape ADP</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$23099</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapaf7">
+                <img src="../img/products/f7.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Adidas Showyheway Sport</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$19319</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapaf8">
+                <img src="../img/products/f8.jpg" alt="">
+                <div class="des">
+                    <span>nike</span>
+                    <h5>Nike Zommx Vaporfly Next% 2</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$59700</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="banner" class="section-m1">
+        <h4>BIG SALE</h4>
+        <h2>Hasta <span>70% Off</span> En Nuestros Productos</h2>
+        <button class="normal">Seguir Explorando</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Lanzamientos</h2>
+        <p>Productos Nuevos En Stock</p>
+        <div class="pro-container">
+            <div class="pro" id="zapan1">
+                <img src="../img/products/n1.jpg" alt="">
+                <div class="des">
+                    <span>wilson</span>
+                    <h5>Wilson Pro Open</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$25244</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapan2">
+                <img src="../img/products/n2.jpg" alt="">
+                <div class="des">
+                    <span>nike</span>
+                    <h5>Nike LeBron James</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$64000</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapan3">
+                <img src="../img/products/n3.jpg" alt="">
+                <div class="des">
+                    <span>nike</span>
+                    <h5>Nike Air Max SC</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$32399</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapan4">
+                <img src="../img/products/n4.jpg" alt="">
+                <div class="des">
+                    <span>asics</span>
+                    <h5>Asics Running Nimbus NG</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$65259</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapan5">
+                <img src="../img/products/n5.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Adidas Superstar</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$11000</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapan6">
+                <img src="../img/products/n6.jpg" alt="">
+                <div class="des">
+                    <span>asics</span>
+                    <h5>Asics Running Gel-nimbus 23</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$19124</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapan7">
+                <img src="../img/products/n7.jpg" alt="">
+                <div class="des">
+                    <span>asics</span>
+                    <h5>Asics Gel-nimbus 23 Azul</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$56399</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro" id="zapan8">
+                <img src="../img/products/n8.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Adidas Showtheway</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$14000</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="sm-banner" class="section-p1">
+        <div class="banner-box">
+            <h4>ofertas especiales</h4>
+            <h2>compra 1 lleva 1 gratis</h2>
+            <span>Nuestro mejor producto en oferta</span>
+            <button class="white">Leer más</button>
+        </div>
+        <div class="banner-box banner-box2">
+            <h4>running/training</h4>
+            <h2>proximos lanzamientos</h2>
+            <span>Envíos gratis en nuestros productos</span>
+            <button class="white">Leer más</button>
+        </div>
+    </section>
+
+    <section id="banner3">
+        <div class="banner-box">
+            <h2>OFERTA TEMPORADA</h2>
+            <h3>Zapatillas de Hombre -50% OFF</h3>
+        </div>
+        <div class="banner-box banner-box2">
+            <h2>NUEVA COLECCION</h2>
+            <h3>Verano 2022</h3>
+        </div>
+        <div class="banner-box banner-box3">
+            <h2>PRECIOS IMPERDIBLES</h2>
+            <h3>Nueva linea de productos</h3>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Suscribete Al Boletin</h4>
+            <p>Recibe E-mail sobre nuestros ultimos lanzamientos y <span>ofertas especiales</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Tu direccion de correo">
+            <button class="normal">Registrarse</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="../img/logo.png" alt="">
+            <h4>Contacto</h4>
+            <p><strong>Direccion:</strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Telefono:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Horario: </strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Siguenos</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>Institucional</h4>
+            <a href="#">Quienes Somos</a>
+            <a href="#">Informacion de Delivery</a>
+            <a href="#">Políticas de Privacidad</a>
+            <a href="#">Terminos y Condiciones</a>
+            <a href="#">Contactanos</a>
+        </div>
+
+        <div class="col">
+            <h4>Mi Cuenta</h4>
+            <a href="#">Iniciar Sesion</a>
+            <a href="#">Ver Carrito</a>
+            <a href="#">My Lista de Deseos</a>
+            <a href="#">Seguir mi Pedido</a>
+            <a href="#">Ayuda</a>
+        </div>
+
+        <div class="col install">
+            <h4>Instalar App</h4>
+            <p>Desde App Store o Google Play</p>
+            <div class="row">
+                <img src="../img/pay/app.jpg" alt="">
+                <img src="../img/pay/play.jpg" alt="">
+            </div>
+            <p>Formas de Pago</p>
+            <img src="../img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>© 2021, Tech2 etc - HTML CSS Ecommerce Template</p>
+        </div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+    <script src="../JS/productos.js"></script>
+</body>
+
+</html>

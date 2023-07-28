@@ -1,0 +1,15 @@
+/* Estilos globales */
+
+/*parrafos*/
+p.para{
+    color: var(--text-color);
+    font-size: 16px/ 25px;
+    font-family: var(--roboto);
+}
+
+/*listas*/
+.card-style{
+    color: var(--text-color);
+    font-size: 16px/ 25px;
+    font-family: var(--roboto);
+}

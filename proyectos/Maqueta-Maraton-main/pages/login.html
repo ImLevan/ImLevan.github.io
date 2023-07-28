@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+
+    <link rel="stylesheet" href="../css/partials/login.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+
+
+    <script src="../js/jquery.3.6.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/login/login.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <form class="form-signin" id="sec_login">
+        <h3 class="form-signin-heading">Bienvenido! Por favor, inicie sesión</h3>
+        <hr class="colorgraph"><br>
+        <input type="email" style="margin-bottom: 5px;" class="form-control" id="input_correo" placeholder="Correo Electrónico" required="true">
+        <input type="password" class="form-control" id="input_password" placeholder="Contraseña" required="true">
+        <button type="submit" id="boton_iniciar" value="Iniciar Sesión" onclick="login()">Iniciar Sesión</button>
+        <hr><br>
+    </form>
+
+    <div class="form-signin" id="sec_loginExitoso" style="display: none;">
+        <h3 class="form-signin-heading">Logueo Exitoso.</h3>
+        <hr class="colorgraph"><br>
+        <a href="../index.html" type="button" id="boton_iniciar">Ir al home</a>
+    </div>
+</body>
+
+</html>

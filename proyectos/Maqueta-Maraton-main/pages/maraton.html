@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centros de salud</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <script src="../js/jquery.3.6.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+    <link rel="stylesheet" href="../css/partials/mapas.css">
+    <script src="../js/mapas/creadorMapas.js"></script>
+    <script src="../js/mapas/dibujador.js"></script>
+    <script src="../js/carrera/comunicadorSistClasif.js"></script>
+    <script src="../js/carrera/admCarrera.js"></script>
+</head>
+
+<body onload="main()">
+
+    <!-- SECCION HEADER -->
+
+    <section class="head">
+        <header>
+            <div class="contenido-header">
+                <div class="head-logo">
+                    <a href="../index.html" class="logo">
+                        <img src="../img/logo/salud-mapas-ico2.png" alt="logo" class="img-logo">
+                    </a>
+                </div>
+                <nav id="nav" class="">
+                    <ul id="links">
+                        <li><a href="../index.html" class="seleccionado">INICIO</a></li>
+                        <li><a href="../pages/inscripcion.html">INSCRIPCION</a></li>
+                        <li><a href="../pages/centrosdesalud.html">CENTROS DE SALUD</a></li>
+                        <li><a href="../pages/maraton.html">MARATON</a></li>
+                        <li><a href="../pages/login.html" id="login_id">LOGIN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <!-- SECCION MAPA -->
+    <section class="map">
+        <div class="container-fuild">
+            <div class="cont-titulos">
+                <h2 class="text-uppercase pt-5">Seguimiento de maratón</h2>
+                <div id="map"></div>
+            </div>
+
+            <div class="cont-lista">
+                <h3 class="text-uppercase pt-5 ">Corredores</h3>
+                <ul id="lista_corredores"></ul>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
