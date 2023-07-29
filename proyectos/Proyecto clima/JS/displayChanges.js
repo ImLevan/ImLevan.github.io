@@ -115,7 +115,6 @@ function mostrarDias(obj) {
 
     //Dia de hoy
     fecha = convertDateFormat(obj.list[0].dt_txt);
-    console.log(fecha)
     const timezoneOffsetSeconds = obj.city.timezone; // Valor en segundos (ejemplo 7200 para +2 horas)
 
     // Convertir el desplazamiento de la zona horaria a milisegundos
@@ -126,7 +125,6 @@ function mostrarDias(obj) {
 
     // Ajustar la fecha según el desplazamiento de la zona horaria
     const fechaLocal = new Date(fechaUTC.getTime() + timezoneOffsetMilliseconds);
-    console.log(fechaLocal)
     // Obtener el formato deseado con el día de la semana en palabras
     const fechaFormato = fechaLocal.toLocaleDateString('es-Es', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     date.textContent = fechaFormato;
