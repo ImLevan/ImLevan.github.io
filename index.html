@@ -258,6 +258,9 @@
                             <a href="./proyectos/Maqueta-Maraton-main/index.html" target="_blank">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
+                            <a href="https://docs.google.com/document/d/1-PALzokz7R_kUxCpsFUj7PZu1WffrhT6ZYkp7JRXV-4/edit?usp=sharing" target="_blank">
+                                <i class="fas fa-book"></i>
+                            </a>
                         </div>
 
                     </div>
@@ -290,6 +293,9 @@
                             </a>
                             <a href="./proyectos/Proyecto ecommerce/HTML/index.html" target="_blank">
                                 <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://docs.google.com/document/d/1XlpUvMKgA66SPRQVDle1bBvwL0878NE5-qdwX3Zbsrg/edit?usp=sharing" target="_blank">
+                                <i class="fas fa-book"></i>
                             </a>
                         </div>
 
@@ -515,7 +521,7 @@
 
     <!-- SECCION FOOTER -->
     <footer>
-        <p>Hecho por Valentin Chianese</p>
+        <p>&copy; <span id="year"></span> Hecho por Valentin Chianese</p>
         <div class="redes">
             <a href="https://www.facebook.com/valentin.chianese" target="_BLANK"><i
                     class="fa-brands fa-facebook"></i></a>
@@ -528,6 +534,20 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="javascript/particle.js"></script>
     <script src="javascript/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const yearElement = document.getElementById('year');
+      
+          // Obtener la fecha actual
+          const fechaActual = new Date();
+      
+          // Obtener el año actual de la fecha
+          const añoActual = fechaActual.getFullYear();
+      
+          // Actualizar el contenido del elemento del footer con el año actual
+          yearElement.textContent = añoActual;
+        });
+    </script>
 
 </body>
 
