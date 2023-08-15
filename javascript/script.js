@@ -31,7 +31,9 @@ window.onscroll = function(){
 //funcion que aplica la animacion
 function efectoHabilidades(){
     var skills = document.getElementById("skills");
+    var divImg = document.getElementById("about-img");
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+    var distancia_divAbout = window.innerHeight - divImg.getBoundingClientRect().top;
     if(distancia_skills >= 300){
         document.getElementById("java").classList.add("barra-progreso1");
         document.getElementById("python").classList.add("barra-progreso2");
@@ -43,8 +45,15 @@ function efectoHabilidades(){
         document.getElementById("testing").classList.add("barra-progreso8");
         document.getElementById("git").classList.add("barra-progreso9");
         document.getElementById("ts").classList.add("barra-progreso10");
+
+    }
+    if(distancia_divAbout >=300){
+        document.getElementById("about-img").classList.add("mov");
+        document.getElementById("about-text").classList.add("mov")
     }
 }
+
+
 
 //funcion que manda el mail
 const $form = document.querySelector('#form')
