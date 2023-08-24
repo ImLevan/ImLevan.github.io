@@ -2,553 +2,737 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="icon" href="img/logo.png">
+    <meta charset="utf-8">
     <title>Valentin Chianese</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Solway:400,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="img/logo/logo.png">
+
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Header Start -->
+    <div class="top-header" id="top-header">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="img/top-header/profile-img.jpeg" alt="Anamul Hasan" />
+                </div>
 
-    <!-- Seccion Particulas  1-->
-    <div id="particles-js"></div>
+                <div class="col-md-12">
+                    <h1>Soy <span>Valentin</span> Chianese</h1>
+                </div>
 
-    <!-- Seccion Inicio -->
-    <section id="inicio">
-        <div class="contenido">
-            <header>
-                <div class="contenido-header">
-                    <h1>/VC/</h1>
-                    <nav id="nav" class="">
-                        <ul id="links">
-                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
-                            <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
-                            <li><a href="#habilidades" onclick="seleccionar(this)">HABILIDADES</a></li>
-                            <li><a href="#portfolio" onclick="seleccionar(this)">PORTFOLIO</a></li>
-                            <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
-                        </ul>
-                    </nav>
+                <div class="col-md-12 h2">
+                    <h2 class="span-text"><span id="typing-span">Web Developer</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
 
-                    <!-- Iconos del menu repsonsive -->
-                    <div id="icono-nav" onclick="responsiveMenu()">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
+    <!-- Nav Start -->
+    <div class="header sticky">
+        <div class="container">
 
-                    <!-- Iconos de las redes sociales -->
-                    <div class="redes">
-                        <a href="https://www.facebook.com/valentin.chianese" target="_BLANK"><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/chianesevalentin/" target="_BLANK"><i
-                                class="fa-brands fa-square-instagram"></i></a>
-                        <a href="https://twitter.com/Chianese19" target="_BLANK"><i
-                                class="fa-brands fa-square-twitter"></i></a>
+            <div class="logo pull-left">
+                <h1><a href="index.html">/VC/</a></h1>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="#top-header">Inicio</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#portfolio">Portafolio</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Iconos del menu repsonsive -->
+            <div id="icono-nav" onclick="responsiveMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="nav social-nav pull-right d-none d-lg-inline">
+                <a href="https://twitter.com/chianese19" target="_blank"><i class="fa fa-twitter"></i></a> <a
+                    href="https://www.instagram.com/chianesevalentin/" target="_blank"><i
+                        class="fa fa-instagram"></i></a> <a href="https://ar.linkedin.com/in/valentin-chianese"
+                    target="_blank"><i class="fa fa-linkedin"></i></a>
+            </nav>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav id="mobile-nav">
+            <ul class="nav-menu">
+                <li><a href="#top-header">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-body-overly"></div>
+    </div>
+    <!-- Nav End -->
+
+    <!-- About Me Start-->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-4">
+                    <img class="img-fluid" src="img/about/foto1.jpeg" />
+                </div>
+
+                <div class="col-md-6 col-lg-8">
+                    <header class="section-header">
+                        <h2>Sobre Mí</h2>
+                    </header>
+                    <h3><strong>Nombre:</strong> Valentin Chianese</h3>
+                    <h4><strong>Profesión:</strong> Desarrollador de software y Tester</h4>
+                    <p>
+                        Desarrollador y estudiante de licenciatura en sistemas y tecnicatura universitaria en
+                        informática con cuatro años de experiencia
+                        académica, cuento con un gran
+                        interés en aprender cada día nuevas tecnologías y algo nuevo sobre la programación backend y
+                        frontend. Tengo una gran capacidad para adaptarme a todo tipo de entornos, debido a mi
+                        curiosidad me gusta ser autodidacta también.
+                    </p>
+                    <p>
+                        Tengo habilidades para el
+                        análisis, la programación, el diseño y la
+                        gestión de proyectos informáticos. Me
+                        considero una persona proactiva, creativa y
+                        comprometida con el aprendizaje continuo.
+                    </p>
+                    <a href="cv/CV2.pdf" target="_blank">Descargar CV</a>
+                    <a href="https://github.com/ImLevan/Certificados" target="_blank">Certificados</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skills">
+                        <h3>Front End Skills</h3>
+                        <div class="skill-name">
+                            <i class="fa-brands fa-js" style="color: #f6d32d;"></i>
+                            <i class="fa-brands fa-css3-alt" style="color: #3584e4;"></i>
+                            <i class="fa-brands fa-react" style="color: #36e1f0;"></i>
+                            <i class="fa-brands fa-bootstrap" style="color: #9141ac;"></i>
+                            <i class="fa-brands fa-html5" style="color: #e66100;"></i>
+                            <i class="fa-brands fa-figma" style="color: #740b37;"></i>
+                        </div>
+                        <div class="skill-name">
+                            <img src="./img/tailwind.svg" alt="Descripción de la imagen">
+                            <img src="./img/typescript.svg" alt="Descripción de la imagen">
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="skills">
+                        <h3>Back End Skills</h3>
+                        <div class="skill-name">
+                            <i class="fa-brands fa-java" style="color: #740b37;"></i>
+                            <i class="fa-solid fa-c" style="color: #1c71d8;"></i>
+                            <i class="fa-brands fa-node" style="color: #2aad09;"></i>
+                            <i class="fa-brands fa-python" style="color: #1c71d8;"></i>
+                            <i class="fa-brands fa-golang" style="color: #36e1f0;"></i>
+                        </div>
+                        <div class="skill-name">
+                            <img src="./img/django.png" alt="Descripción de la imagen">
+                            <img src="./img/spring.png" alt="Descripción de la imagen">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skills">
+                        <h3>Otros</h3>
+                        <div class="skill-name">
+                            <img src="./img/mongo.svg" alt="Descripción de la imagen">
+                            <img src="./img/postman.svg" alt="Descripción de la imagen">
+                            <img src="./img/mysql.svg" alt="Descripción de la imagen">
+                            <img src="./img/ps.svg" alt="Descripción de la imagen">
+                            <img src="./img/psql.svg" alt="Descripción de la imagen">
+                        </div>
+                        <div class="skill-name">
+                            <img src="./img/selenium.svg" alt="Descripción de la imagen">
+                            <img src="./img/sqlite.svg" alt="Descripción de la imagen">
+                            <i class="fa-brands fa-git-alt" style="color: #f03636;"></i>
+                            <i class="fa-brands fa-linux" style="color: #740b37;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Me End-->
+
+    <!-- Job Experience Start -->
+    <div class="experience" id="experience">
+        <div class="container">
+            <header class="section-header">
+                <h3>Estudios Académicos</h3>
+                <p>
+                    Información sobre mis estudios universitarios con relación a la industria IT.
+                </p>
             </header>
-            <div class="presentacion">
-                <p class="bienvenida">Bienvenidos</p>
-                <h2>Soy <span>Valentin</span> Chianese, Desarrollador de Software</h2>
-                <p class="descripcion">Mayor conocimiento en programación orientada a objetos, con Java como el lenguaje
-                    con mas experiencia, y en continuo aprendizaje de más lenguajes y tecnologías. Así como experimentar
-                    diferentes puestos relacionados con sistemas.</p>
-                <a href="#portfolio">Ir a portfolio</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi">
-        <div class="contenedor-foto" id="about-img">
-            <img src="img/foto.jpg" alt="">
-        </div>
-        <div class="sobremi" id="about-text">
-            <p class="titulo-seccion">Sobre Mi</p>
-            <h3>Desarrollador de Software</h3>
-            <p>Estudiante de licenciatura en sistemas y tecnicatura universitaria en informática, con un gran interés en
-                aprender cada día nuevas tecnologías y algo nuevo sobre la programación backend y frontend. Tengo una
-                gran
-                capacidad para adaptarme a todo tipo de entornos, debido a mi curiosidad me gusta ser autodidacta
-                también.</p>
-            <p>Me caracterizo por mi entrega para trabajar en equipo y mi entusiasmo para desarrollar mis habilidades.
-                En busca de una oportunidad laboral para poder formarme como un profesional.</p>
-            <a href="cv/CV2.pdf" target="_BLANK">Descargar CV</a>
-            <a href="https://github.com/ImLevan/Certificados" target="_BLANK">Certificados</a>
-        </div>
-    </section>
-
-    <!-- SECCION HABILIDADES -->
-    <section id="habilidades">
-        <div class="contenedor-skills" id="skills">
-            <h3 class="titulo">HABILIDADES</h3>
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>Java (SPRING & SPRING BOOT)</p>
-                    <span class="porcentaje">75%</span>
-                </div>
-                <div class="barra">
-                    <div id="java" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>Python</p>
-                    <span class="porcentaje">60%</span>
-                </div>
-                <div class="barra">
-                    <div id="python" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>POO y Programacion funcional</p>
-                    <span class="porcentaje">90%</span>
-                </div>
-                <div class="barra">
-                    <div id="poo" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>Base de Datos SQL y NoSQL (Postgres, MYSQL, MongoDB)</p>
-                    <span class="porcentaje">65%</span>
-                </div>
-                <div class="barra">
-                    <div id="bd" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>Html & Css (Bootstrap)</p>
-                    <span class="porcentaje">90%</span>
-                </div>
-                <div class="barra">
-                    <div id="html" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>Javascript (Node, React.js, React Native)</p>
-                    <span class="porcentaje">80%</span>
-                </div>
-                <div class="barra">
-                    <div id="js" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>Lenguaje C</p>
-                    <span class="porcentaje">40%</span>
-                </div>
-                <div class="barra">
-                    <div id="c" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>TESTING(JUnit, Selenium)</p>
-                    <span class="porcentaje">70%</span>
-                </div>
-                <div class="barra">
-                    <div id="testing" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>GIT</p>
-                    <span class="porcentaje">80%</span>
-                </div>
-                <div class="barra">
-                    <div id="git" class=""></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="info">
-                    <p><span class="lista"></span>Typescript</p>
-                    <span class="porcentaje">80%</span>
-                </div>
-                <div class="barra">
-                    <div id="ts" class=""></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCION PORTAFOLIO -->
-    <section id="portfolio">
-        <h3 class="titulo-seccion">MIS PROYECTOS</h3>
-        <div class="fila-proyectos">
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img//proyectoKarU.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: KarU - Compra y Venta</h3>
-                        <p>Página Web</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        El proyecto KarU es una página web de compra y venta de vehículos, diseñada para satisfacer las
-                        necesidades de los usuarios que buscan una forma fácil, rápida y segura de adquirir o vender un
-                        automóvil. El proyecto se realizó en el marco de una asignatura académica de la universidad,
-                        utilizando la metodología SAFE en combinación con Scrum, una forma ágil y flexible de gestionar
-                        el desarrollo de software. El proyecto se dividió en cuatro módulos, nuestro equipo se encargó
-                        del módulo administrativo. <h4>Mi rol:</h4>Mi rol en el equipo fue el de desarrollador frontend,
-                        encargado de diseñar e implementar la interfaz gráfica del módulo administrativo, utilizando
-                        tecnologías como React y JavaScript. Mis compañeros de equipo fueron quienes se ocuparon de las
-                        tareas de backend,
-                        testing, documentación y coordinación.</p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ZavSS/adminBackend-KarU" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://karu-web-back.onrender.com/" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://docs.google.com/document/d/1-6BEFcK2kuAZaM2AzUBnTX_jSIp62mKq7ibSZFRlkPs/edit?usp=sharing&usp=embed_facebook"
-                                target="_blank">
-                                <i class="fas fa-book"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img/proyecyoMaraton.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Página Web de Maratón: Salud y Deporte en Sincronía</h3>
-                        <p>Diseño web inscripcion a maraton</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        Un apasionante proyecto universitario desarrollado por tres compañeros que ofrece una página web
-                        de maratón única. Con HTML, CSS y JavaScript, creamos una experiencia interactiva con
-                        información detallada del evento, mapas interactivos de centros de salud donde los participantes
-                        podian ver donde hacerce los chequeos medicos, visualización del
-                        circuito donde se pueden observar en los tiempos que llegaron a las ubicaciones clave y la
-                        posibilidad de registrar y compartir los tiempos de los corredores.<h4>Mi rol:</h4>Mis roles en
-                        este proyecto incluyeron
-                        participacion en la gestion de proyecto como; analisis de requisitos, creacion de casos de uso y
-                        diseño de la arquitectura del sistema, además de participar en el maquetado de la pagina.</p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/Maqueta-Maraton" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="./proyectos/Maqueta-Maraton-main/index.html" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://docs.google.com/document/d/1-PALzokz7R_kUxCpsFUj7PZu1WffrhT6ZYkp7JRXV-4/edit?usp=sharing" target="_blank">
-                                <i class="fas fa-book"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img/proyecto ecommerce.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Ecommerce Estático: Explora una Experiencia Visual</h3>
-                        <p>Diseño Web Ecommerce</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        Te doy la bienvenida a mi proyecto personal, un emocionante Ecommerce Estático desarrollado con
-                        pasión. Esta página web te sumerge en una experiencia visual a través de sus secciones: Inicio,
-                        Productos, Blog, Sobre nosotros y Contacto. Aunque el carrito de compras no es funcional por la
-                        ausencia de una base de datos, podrás explorar una amplia variedad de productos y sumergirte en
-                        la esencia de un ecommerce en su forma estática. Con HTML, CSS y JavaScript, he creado esta
-                        plataforma para compartir mi pasión por el diseño y la programación. ¡Dejo el repo de github
-                        para que puedas clonarlo y navegar por el como quieras!. <h4>Mi rol:</h4>Mi rol en este proyecto
-                        fue
-                        el diseño de la pagina, tanto como el desarrollo de la misma.</p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/project-ecommerce" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="./proyectos/Proyecto ecommerce/HTML/index.html" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://docs.google.com/document/d/1XlpUvMKgA66SPRQVDle1bBvwL0878NE5-qdwX3Zbsrg/edit?usp=sharing" target="_blank">
-                                <i class="fas fa-book"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img/proyectoClima.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Aplicación del Clima - WeatherUnlocked API</h3>
-                        <p>Diseño Web API</p>
-                        <br><br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        Mí pagina web del Clima es un proyecto personal desarrollado íntegramente por mí, abarcando
-                        diseño, desarrollo y gestión. Utilizando HTML, CSS y JavaScript puro, he creado una página
-                        que consume la API de WeatherUnlocked para brindar información meteorológica precisa y
-                        actualizada de ciudades de todo el mundo. La interfaz intuitiva, detalles completos del
-                        clima y la posibilidad de personalizar las ciudades favoritas hacen que esta aplicación sea
-                        una herramienta valiosa para estar preparado ante cualquier condición climática. ¡Dejo el repo
-                        de github
-                        para que puedas clonarlo y navegar por el como quieras!.</p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/Proyecto-Clima" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img//proyectoapimovies.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Buscador de Películas</h3>
-                        <p>Comunicación co API de peliculas</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        Bienvenido a mi proyecto personal, un Buscador de Películas que te sumergirá en el
-                        fascinante mundo del cine. Con HTML, CSS y JavaScript, he desarrollado una página web
-                        interactiva que te permite buscar películas y acceder a una amplia variedad de información sobre
-                        cada una de ellas.
-                        Utilizando la API de películas OMDB, podrás agilizar tus búsquedas y obtener detalles como
-                        títulos, año de lanzamiento, calificación, sinopsis y mucho más. Todo diseñado para brindarte
-                        una experiencia de usuario única y enriquecedora.</p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/apiMovies" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="./proyectos/appPeliculas/index.html" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img/proyectoCalculadora.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Calculadora Online</h3>
-                        <p>Calculadora con JS</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        Te presento mi proyecto personal: una Calculadora Online totalmente funcional. Con
-                        un diseño cuidadosamente creado con HTML y CSS, y una lógica matemática implementada en
-                        JavaScript, esta calculadora te ofrece una experiencia de usuario eficiente y amigable.
-                        Realiza operaciones matemáticas con facilidad, desde sumas y restas hasta multiplicaciones y
-                        divisiones. Además, hemos añadido un atractivo botón para activar el "Modo Nocturno",
-                        proporcionándote una opción más cómoda para tus cálculos en ambientes con poca luz.</p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/Calculadora" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="./proyectos/Calculadora project/index.html" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img/JuegoPy.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Adivina la cancion</h3>
-                        <p>Juego en Python</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        Bienvenido a mi proyecto académico desarrollado en Python con Pygame.
-                        Sumérgete en el mundo de la música mientras te diviertes adivinando el nombre de las canciones o
-                        sus autores.
-                        El juego te desafía a reconocer las letras de diversas canciones, otorgándote puntos por cada
-                        acierto. Con un sistema de puntos para
-                        aciertos y fallos, sentirás la emoción de competir contra el tiempo o alcanzar un límite de
-                        canciones.
-                        Al finalizar, se mostrará tu puntaje, permitiéndote comparar tus conocimientos musicales y
-                        ofreciéndote la opción de volver a jugar y mejorar tus habilidades. En el menú del juego, podrás
-                        leer las reglas para que estés listo para el desafío.<h4>Mi rol:</h4>Mi rol en el proyecto conto
-                        con la participacion de la logica para el juego, como tambien la parte grafica de la interfaz.
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="exp-column">
+                        <p class="exp-date">Marzo-2019 <span>hasta</span> Actualidad</p>
+                        <h4 class="exp-company">Licenciatura en Sistemas</h4>
+                        <h4 class="exp-designation">Universidad Nacional de General Sarmiento</h4>
+                        <p class="exp-detail">
+                            - Materias aprobadas: 20
                         </p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/Juego-PY" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img/JuegoNinjas.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Naruto Delivery Challenge</h3>
-                        <p>Juego en JAVA</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        Mi proyecto personal académico desarrollado en Java! Basado en el mundo de Naruto
-                        sobre un personaje, encargado de realizar entregas en distintos puntos del
-                        mapa.
-                        La misión es esquivar hábilmente a los ninjas que se interpondrán en tu camino, mientras
-                        utilizas el Rasengan para eliminar obstáculos y abrirte paso hacia la victoria. Ten en
-                        cuenta que el Rasengan tiene un tiempo de recuperación (cooldown), así que úsalo sabiamente.
-                        A medida que avanzas, enfrentarás desafíos cada vez más intensos, poniendo a prueba tus
-                        habilidades y reflejos ninja. Si logras completar todas las entregas, alcanzarás la gloria y te
-                        convertirás en el campeón de Naruto Delivery Challenge.<h4>Mi rol:</h4>Mi rol en el proyecto
-                        conto
-                        con la participacion de la logica para el juego basada en programación orientada a objetos, como
-                        tambien la parte grafica de la interfaz.
+                        <p class="exp-detail">
+                            - Cantidad de materias de la carrera: 33
                         </p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/Juego-Ninjas" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-
+                        <a href="https://www.ungs.edu.ar/carrera/licenciatura-en-sistemas" target="_blank">Plan de
+                            estudios</a>
                     </div>
                 </div>
-            </div>
-            <div class="proyecto">
-                <div class="contenedor-proyecto">
-                    <div class="imagen-proyecto">
-                        <img src="img/proyectoAhorcado.png" alt="">
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Título: Ahorcado</h3>
-                        <p>Juego en JAVA</p>
-                        <br>
-                        <p>
-                        <h4>Descripción:</h4>
-                        ¡Bienvenido al proyecto académico Ahorcado, un juego de ahorcado desarrollado por un equipo de
-                        tres personas, incluyéndome! Juego creado con Java y la interfaz Swing.
-                        En Ahorcado, te enfrentarás a palabras ocultas representadas por espacios en blanco que deberás
-                        completar adivinando letras. Con un sistema de vidas, deberás tener cuidado y tomar decisiones
-                        estratégicas para evitar quedarte sin intentos.
-                        El juego ofrece la opcion de jugar en ingles o español segun tu preferencia.
-                        Pon a prueba tus habilidades y suma puntos a medida que resuelves palabras con precisión.
-                        Además, el sistema de tabla de récords te permitirá revisar tu historial de puntuaciones y
-                        competir por el primer lugar.<h4>Mi rol:</h4>Mi rol en el proyecto fue participar de la lógica
-                        para el juego, como tambien de la interfaz con Swing.
+                <div class="col-md-6">
+                    <div class="exp-column">
+                        <p class="exp-date">Marzo-2019 <span>hasta</span> Actualidad</p>
+                        <h4 class="exp-company">Tecnicatura Universitaria en Informática</h4>
+                        <h4 class="exp-designation">Universidad Nacional de General Sarmiento</h4>
+                        <p class="exp-detail">
+                            - Materias aprobadas: 20
                         </p>
-
-                        <div class="repositorio-github">
-                            <a href="https://github.com/ImLevan/Ahorcado" target="_BLANK">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-
+                        <p class="exp-detail">
+                            - Cantidad de materias de la carrera: 21
+                        </p>
+                        <a href="https://www.ungs.edu.ar/carrera/tecnicatura-universitaria-en-informatica"
+                            target="_blank">Plan de estudios</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- Job Experience End -->
 
-
-    <!-- SECCION CONTACTO -->
-    <section id="contacto">
-        <h3 class="titulo-seccion">Contactame ahora</h3>
-        <div class="contenedor-form">
-            <form id="form" action="" class="form">
-                <div class="fila mitad">
-                    <input name="name" type="text" placeholder="Nombre Completo" class="input-mitad" required="">
-                    <input name="email" type="text" placeholder="Direccion de Email" class="input-mitad" required=""
-                        pattern="(\w+\.?)+@\w+(\.{1}\w+)+">
+    <!-- Services Start -->
+    <div class="services" id="services">
+        <div class="container">
+            <header class="section-header">
+                <h3>Mis Servicios</h3>
+                <p>
+                    Como desarrollador backend y frontend con experiencia en el desarrollo de aplicaciones web y
+                    aplicaciones de escritorio, estos son los servicios que ofresco.
+                </p>
+            </header>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="single-service">
+                        <span></span>
+                        <div class="service-icon"><i class="fa fa-television"></i></div>
+                        <h4><a href="#">Desarrollo de Apps de Escritorio</a></h4>
+                        <p>Lenguajes como Java, Python, GO para la creación de estas apps</p>
+                    </div>
                 </div>
-                <div class="fila">
-                    <input name="theme" type="text" placeholder="Tema..." class="input-full" required="">
+                <div class="col-sm-6 col-md-4">
+                    <div class="single-service">
+                        <span></span>
+                        <div class="service-icon"> <i class="fa fa-laptop"></i> </div>
+                        <h4><a href="#">Desarrollo Web</a></h4>
+                        <p>Implementación de autenticación de usuarios, bases de datos, API, etc</p>
+                    </div>
                 </div>
-                <div class="fila">
-                    <textarea name="message" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"
-                        required=""></textarea>
+                <div class="col-sm-6 col-md-4">
+                    <div class="single-service">
+                        <span></span>
+                        <div class="service-icon"> <i class="fa fa-globe"></i> </div>
+                        <h4><a href="#">Webs estáticas</a></h4>
+                        <p>Diseño y desarrollo de webs estátcias y landing pages</p>
+                    </div>
                 </div>
-
-                <input type="submit" value="Enviar Mensaje" class="btn-enviar">
-            </form>
-            <a href="mailto:chianesevalentin@gmail.com" id="trucazo">enviar mail</a>
+            </div>
         </div>
-    </section>
+    </div>
+    <!-- Services End -->
 
-    <!-- SECCION FOOTER -->
-    <footer>
-        <p>&copy; <span id="year"></span> Hecho por Valentin Chianese</p>
-        <div class="redes">
-            <a href="https://www.facebook.com/valentin.chianese" target="_BLANK"><i
-                    class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/chianesevalentin/" target="_BLANK"><i
-                    class="fa-brands fa-square-instagram"></i></a>
-            <a href="https://twitter.com/Chianese19" target="_BLANK"><i class="fa-brands fa-square-twitter"></i></a>
+    <!-- Counter Start -->
+    <div class="counters">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="counter">
+                        <div class="counter-icon-box"><i class="fa fa-calendar"></i></div>
+                        <div class="number animateNumber" data-toggle="counter-up"> <span>4</span></div>
+                        <h4 class="font-weight">Años de experiencia académica/personal</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="counter">
+                        <div class="counter-icon-box"><i class="fa fa-check"></i></div>
+                        <div class="number animateNumber" data-toggle="counter-up"> <span>10</span></div>
+                        <h4 class="font-weight">Proyectos completados</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="counter">
+                        <div class="counter-icon-box"><i class="fa fa-users"></i></div>
+                        <div class="number animateNumber" data-toggle="counter-up"> <span>3</span></div>
+                        <h4 class="font-weight">Clientes</h4>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+    <!-- Counter End -->
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="javascript/particle.js"></script>
-    <script src="javascript/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const yearElement = document.getElementById('year');
-      
-          // Obtener la fecha actual
-          const fechaActual = new Date();
-      
-          // Obtener el año actual de la fecha
-          const añoActual = fechaActual.getFullYear();
-      
-          // Actualizar el contenido del elemento del footer con el año actual
-          yearElement.textContent = añoActual;
-        });
-    </script>
+    <!-- Portfolio Start -->
+    <div class="portfolio" id="portfolio">
+        <div class="container">
+            <header class="section-header">
+                <h3 class="section-title">My Portfolio</h3>
+                <p>
+                    Morbi lacinia malesuada risus vel pellentesque. Cras malesuada, felis nec dignissim lobortis, nisl
+                    nulla venenatis arcu, et commodo lacus nulla sit amet libero.
+                </p>
+            </header>
 
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">Todos</li>
+                        <li data-filter="web-dev">Desarrollo web</li>
+                        <li data-filter="app-dev">Desarrollo de aplicaiones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECCION PORTAFOLIO -->
+            <section id="portfolio">
+                <h3 class="titulo-seccion">MIS PROYECTOS</h3>
+                <div class="fila-proyectos">
+                    <div class="proyecto web-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/proyectoKarU.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: KarU - Compra y Venta</h3>
+                                <p>Página Web</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                El proyecto KarU es una página web de compra y venta de vehículos, diseñada para
+                                satisfacer las
+                                necesidades de los usuarios que buscan una forma fácil, rápida y segura de adquirir o
+                                vender un
+                                automóvil. El proyecto se realizó en el marco de una asignatura académica de la
+                                universidad,
+                                utilizando la metodología SAFE en combinación con Scrum, una forma ágil y flexible de
+                                gestionar
+                                el desarrollo de software. El proyecto se dividió en cuatro módulos, nuestro equipo se
+                                encargó
+                                del módulo administrativo.</p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ZavSS/adminBackend-KarU" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://karu-web-back.onrender.com/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1-6BEFcK2kuAZaM2AzUBnTX_jSIp62mKq7ibSZFRlkPs/edit?usp=sharing&usp=embed_facebook"
+                                        target="_blank">
+                                        <i class="fas fa-book"></i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto web-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/proyecyoMaraton.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Página Web de Maratón: Salud y Deporte en Sincronía</h3>
+                                <p>Diseño web inscripcion a maraton</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                Un apasionante proyecto universitario desarrollado por tres compañeros que ofrece una
+                                página web
+                                de maratón única. Con HTML, CSS y JavaScript, creamos una experiencia interactiva con
+                                información detallada del evento, mapas interactivos de centros de salud donde los
+                                participantes
+                                podian ver donde hacerce los chequeos medicos, visualización del
+                                circuito donde se pueden observar en los tiempos que llegaron a las ubicaciones clave y
+                                la
+                                posibilidad de registrar y compartir los tiempos de los corredores.</p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/Maqueta-Maraton" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://maratonmaqueta.netlify.app/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1-PALzokz7R_kUxCpsFUj7PZu1WffrhT6ZYkp7JRXV-4/edit?usp=sharing"
+                                        target="_blank">
+                                        <i class="fas fa-book"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto web-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/proyecto ecommerce.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Ecommerce Estático: Explora una Experiencia Visual</h3>
+                                <p>Diseño Web Ecommerce</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                Te doy la bienvenida a mi proyecto personal, un emocionante Ecommerce Estático
+                                desarrollado con
+                                pasión. Esta página web te sumerge en una experiencia visual a través de sus secciones:
+                                Inicio,
+                                Productos, Blog, Sobre nosotros y Contacto. Aunque el carrito de compras no es funcional
+                                por la
+                                ausencia de una base de datos, podrás explorar una amplia variedad de productos y
+                                sumergirte en
+                                la esencia de un ecommerce en su forma estática. Con HTML, CSS y JavaScript, he creado
+                                esta
+                                plataforma para compartir mi pasión por el diseño y la programación.</p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/project-ecommerce" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://shoesecommercestatic.netlify.app/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1XlpUvMKgA66SPRQVDle1bBvwL0878NE5-qdwX3Zbsrg/edit?usp=sharing"
+                                        target="_blank">
+                                        <i class="fas fa-book"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto web-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/proyectoClima.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Aplicación del Clima - WeatherUnlocked API</h3>
+                                <p>Diseño Web API</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                Mí pagina web del Clima es un proyecto personal desarrollado íntegramente por mí,
+                                abarcando
+                                diseño, desarrollo y gestión. Utilizando HTML, CSS y JavaScript puro, he creado una
+                                página
+                                que consume la API de WeatherUnlocked para brindar información meteorológica precisa y
+                                actualizada de ciudades de todo el mundo. La interfaz intuitiva, detalles completos del
+                                clima y la posibilidad de personalizar las ciudades favoritas hacen que esta aplicación
+                                sea
+                                una herramienta valiosa para estar preparado ante cualquier condición climática.</p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/Proyecto-Clima" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto web-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/proyectoapimovies.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Buscador de Películas</h3>
+                                <p>Comunicación co API de peliculas</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                Bienvenido a mi proyecto personal, un Buscador de Películas que te sumergirá en el
+                                fascinante mundo del cine. Con HTML, CSS y JavaScript, he desarrollado una página web
+                                interactiva que te permite buscar películas y acceder a una amplia variedad de
+                                información sobre
+                                cada una de ellas.
+                                Utilizando la API de películas OMDB, podrás agilizar tus búsquedas y obtener detalles
+                                como
+                                títulos, año de lanzamiento, calificación, sinopsis y mucho más. Todo diseñado para
+                                brindarte
+                                una experiencia de usuario única y enriquecedora.</p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/apiMovies" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://apimoviespr.netlify.app/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto web-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/proyectoCalculadora.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Calculadora Online</h3>
+                                <p>Calculadora con JS</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                Te presento mi proyecto personal: una Calculadora Online totalmente funcional. Con
+                                un diseño cuidadosamente creado con HTML y CSS, y una lógica matemática implementada en
+                                JavaScript, esta calculadora te ofrece una experiencia de usuario eficiente y amigable.
+                                Realiza operaciones matemáticas con facilidad, desde sumas y restas hasta
+                                multiplicaciones y
+                                divisiones. Además, hemos añadido un atractivo botón para activar el "Modo Nocturno",
+                                proporcionándote una opción más cómoda para tus cálculos en ambientes con poca luz.</p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/Calculadora" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://levancalculator.netlify.app/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto app-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/JuegoPy.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Adivina la cancion</h3>
+                                <p>Juego en Python</p>
+                                <p>
+                                <h4>Descripción:</h4>
+                                Bienvenido a mi proyecto académico desarrollado en Python con Pygame.
+                                Sumérgete en el mundo de la música mientras te diviertes adivinando el nombre de las
+                                canciones o
+                                sus autores.
+                                El juego te desafía a reconocer las letras de diversas canciones, otorgándote puntos por
+                                cada
+                                acierto. Con un sistema de puntos para
+                                aciertos y fallos, sentirás la emoción de competir contra el tiempo o alcanzar un límite
+                                de
+                                canciones.
+                                Al finalizar, se mostrará tu puntaje, permitiéndote comparar tus conocimientos musicales
+                                y
+                                ofreciéndote la opción de volver a jugar y mejorar tus habilidades.
+                                </p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/Juego-PY" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto app-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/JuegoNinjas.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Naruto Delivery Challenge</h3>
+                                <p>Juego en JAVA</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                Mi proyecto personal académico desarrollado en Java! Basado en el mundo de Naruto
+                                sobre un personaje, encargado de realizar entregas en distintos puntos del
+                                mapa.
+                                La misión es esquivar hábilmente a los ninjas que se interpondrán en tu camino, mientras
+                                utilizas el Rasengan para eliminar obstáculos y abrirte paso hacia la victoria. Ten en
+                                cuenta que el Rasengan tiene un tiempo de recuperación (cooldown), así que úsalo
+                                sabiamente.
+                                A medida que avanzas, enfrentarás desafíos cada vez más intensos, poniendo a prueba tus
+                                habilidades y reflejos ninja. Si logras completar todas las entregas, alcanzarás la
+                                gloria y te
+                                convertirás en el campeón de Naruto Delivery Challenge.
+                                </p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/Juego-Ninjas" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto app-dev">
+                        <div class="contenedor-proyecto">
+                            <div class="imagen-proyecto">
+                                <img src="img/portfolio/proyectoAhorcado.png" alt="">
+                            </div>
+                            <div class="info-proyecto">
+                                <h3>Título: Ahorcado</h3>
+                                <p>Juego en JAVA</p>
+                                <br>
+                                <p>
+                                <h4>Descripción:</h4>
+                                ¡Bienvenido al proyecto académico Ahorcado, un juego de ahorcado desarrollado por un
+                                equipo de
+                                tres personas, incluyéndome! Juego creado con Java y la interfaz Swing.
+                                En Ahorcado, te enfrentarás a palabras ocultas representadas por espacios en blanco que
+                                deberás
+                                completar adivinando letras. Con un sistema de vidas, deberás tener cuidado y tomar
+                                decisiones
+                                estratégicas para evitar quedarte sin intentos.
+                                El juego ofrece la opcion de jugar en ingles o español segun tu preferencia.
+                                Pon a prueba tus habilidades y suma puntos a medida que resuelves palabras con
+                                precisión.
+                                </p>
+
+                                <div class="repositorio-github">
+                                    <a href="https://github.com/ImLevan/Ahorcado" target="_BLANK">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mensaje-sin-proyectos" style="display: none;">
+                        No hay proyectos disponibles en esta categoría.
+                    </div>                    
+                </div>
+            </section>
+        </div>
+    </div>
+        <!-- Portfolio End -->
+
+        <!-- Contact Start -->
+        <div class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Contactame</h3>
+                    <p>
+                        Si tienes un proyecto en mente, una idea que te gustaría discutir o simplemente quieres charlar
+                        sobre tecnología, no dudes en contactarme. Estoy aquí para ayudarte a convertir tus ideas en
+                        realidades digitales. ¡Espero saber de ti pronto!
+                    </p>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <p><i class="fa fa-user"></i>Valentin Chianese</p>
+                            <p><i class="fa fa-tag"></i>Desarrollador de Software</p>
+                            <p><i class="fa fa-map-marker"></i>Buenos Aires, Argentina</p>
+                            <p><i class="fa fa-envelope"></i><a
+                                    href="mailto:info@example.com">chianesevalentin@gmail.com</a></p>
+                            <p><i class="fa fa-phone"></i><a href="tel:+1234567890">+54 9 1158352754</a></p>
+                            <div class="social">
+                                <a href="https://twitter.com/chianese19" target="_blank"><i
+                                        class="fa fa-twitter"></i></a>
+                                <a href="https://github.com/ImLevan" target="_blank"><i class="fa fa-github"></i></a>
+                                <a href="https://ar.linkedin.com/in/valentin-chianese" target="_blank"><i
+                                        class="fa fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/chianesevalentin/" target="_blank"><i
+                                        class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form">
+                            <form action="" method="" id="form">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input name="name" type="text" class="form-control"
+                                            placeholder="Nombre Completo" required />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input name="email" type="email" class="form-control"
+                                            placeholder="Direccion de Email" pattern="(\w+\.?)+@\w+(\.{1}\w+)+"
+                                            required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input name="theme" type="text" class="form-control" placeholder="Asunto"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" class="form-control" cols="30" rows="10"
+                                        placeholder="Mensaje"></textarea>
+                                </div>
+                                <div><button type="submit">Enviar mensaje</button></div>
+                            </form>
+                            <a href="mailto:chianesevalentin@gmail.com" id="send">enviar mail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; Copyright ImLevan <span id="year"></span> . Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer end -->
+
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+
+        <!-- Template Javascript -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const yearElement = document.getElementById('year');
+
+                // Obtener la fecha actual
+                const fechaActual = new Date();
+
+                // Obtener el año actual de la fecha
+                const añoActual = fechaActual.getFullYear();
+
+                // Actualizar el contenido del elemento del footer con el año actual
+                yearElement.textContent = añoActual;
+            });
+        </script>
 </body>
 
 </html>
