@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const words = [
     "Desarrollador de Software",
-    "Desarrollador Backend Java",
-    "Desarrollador FrontEnd React",
+    "Desarrollador Backend",
+    "Desarrollador Frontend",
 ];
 
 const typingSpan = document.getElementById("typing-span");
