@@ -1205,6 +1205,10 @@ div.techs img{
     .repositorio-github a{
         font-size: 13px;
     }
+
+    div.techs img{
+        margin: 0 3px;
+    }
 }
 
 @media screen and (max-width:363px) {
