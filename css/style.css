@@ -1088,11 +1088,27 @@ div.div img {
     font-size: 46px;
 }
 
+.repositorio-github{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.techs img{
+    height: 35px;
+    width: 35px;
+    margin: 17px 0 0 12px;
+}
+
+.links{
+    display: flex;
+}
+
 .repositorio-github a:hover{
     color: var(--color_dominante);
 }
 
-@media screen and (max-width:800px) {
+
+@media screen and (max-width:767px) {
     #portfolio {
         padding: 50px 0;
     }
@@ -1119,6 +1135,20 @@ div.div img {
 
     .repositorio-github a{
         font-size: 26px;
+    }
+
+    div.techs img{
+        height: 26px;
+        width: 26px;
+        margin: 6px 6px 0 6px;
+    }
+}
+
+@media screen and (max-width:474px) {
+    div.techs img{
+        height: 20px;
+        width: 20px;
+        margin: 6px 6px 0 6px;
     }
 }
 
@@ -1154,6 +1184,12 @@ div.div img {
     #portfolio .fila-proyectos .proyecto .info-proyecto {
         font-size: 9px;
     }
+
+    div.techs img{
+        height: 13px;
+        width: 13px;
+        margin: 0 6px;
+    }
 }
 
 @media screen and (max-width:436px) {
@@ -1188,6 +1224,23 @@ div.div img {
     #portfolio .fila-proyectos .proyecto .info-proyecto {
         font-size: 8px;
     }
+
+    div.techs img{
+        height: 12px;
+        width: 12px;
+        margin: 0 3px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .repositorio-github a{
+        font-size: 12px;
+    }
+
+    div.techs img{
+        height: 9px;
+        width: 9px;
+    }
 }
 
 @media screen and (max-width:330px) {
@@ -1206,6 +1259,12 @@ div.div img {
 
     #portfolio .fila-proyectos .proyecto .info-proyecto {
         font-size: 7px;
+    }
+
+    div.techs img{
+        height: 9px;
+        width: 9px;
+        margin: 0;
     }
 }
 
