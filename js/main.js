@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ** TOP HEADER ** //
 
 const words = [
+    "Técnico Universitario en Informática",
     "Desarrollador de Software",
     "Desarrollador Backend",
     "Desarrollador Frontend",
