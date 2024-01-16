@@ -1122,6 +1122,10 @@ div.techs img{
     margin:17px 8px 10px 0;
 }
 
+div.techs img:hover{
+    transform: scale(1.8);
+}
+
 .links{
     display: flex;
 }
