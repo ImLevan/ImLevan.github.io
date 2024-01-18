@@ -91,7 +91,7 @@ h6 {
     height: 100%;
     left: 0;
     top: 0;
-    background: url("../img/top-header/Hero.jpg");
+    background: url("../img/top-header/Hero.webp");
     background-size: cover;
     filter: blur(8px);
     -webkit-filter: blur(8px);
