@@ -4,6 +4,9 @@
 
 :root{
     --color_dominante: #740b37;
+    --background_color: #0b0105;
+    --color_tints_9: #e3ced7;
+    --color_tints_3: #81234b;
 }
 
 html {
@@ -15,7 +18,7 @@ body {
     color: #666666;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    background: #ffffff;
+    background: var(--background_color);
 }
 
 a {
@@ -34,6 +37,7 @@ a:focus {
 p {
     padding: 0;
     margin: 0 0 15px 0;
+    color: var(--color_tints_9);
 }
 
 h1,
@@ -43,7 +47,7 @@ h4,
 h5,
 h6 {
     font-family: 'Solway', serif;
-    color: #666666;
+    color: #FFFFFF;
     margin: 0 0 15px 0;
     padding: 0;
 }
@@ -249,7 +253,7 @@ h6 {
 }
 
 .header .social-nav a:hover {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--background_color);
 }
 
 .nav-menu,
@@ -330,7 +334,13 @@ h6 {
 .nav-menu a:hover,
 .nav-menu li:hover>a,
 .nav-menu .menu-active>a {
-    color: #000000;
+    color: var(--background_color);
+}
+
+@media (max-width: 992px) {
+    .nav-menu a{
+        font-size: 12px;
+    }
 }
 
 .nav-menu ul {
@@ -495,7 +505,7 @@ h6 {
 .section-header h2,
 .section-header h3 {
     display: inline-block;
-    color: var(--color_dominante);
+    color: var(--color_tints_3);
     font-size: 35px;
     text-transform: capitalize;
     text-align: left;
@@ -599,7 +609,7 @@ h6 {
 }
 
 .div{
-    background-color: #96485e;
+    background-color: var(--color_tints_3);
     display: flex;
     transition: all .2s ease-in-out;
 }
@@ -609,10 +619,14 @@ h6 {
     background-color: #490723;
 }
 
+.skills-section-class{
+    margin-top: 90px;
+}
+
 .skills-parent{
     width: 100%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .skills-parent h2{
@@ -673,6 +687,7 @@ div.div img {
 .about {
     padding: 60px 0 15px 0;
     position: relative;
+    margin-bottom: 100px;
 }
 
 .about .row {
@@ -703,7 +718,7 @@ div.div img {
 .experience a {
     display: inline-block;
     padding: 6px 20px;
-    color: var(--color_dominante);
+    color: var(--color_tints_9);
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -720,7 +735,7 @@ div.div img {
 .about .skills h3 {
     font-size: 22px;
     font-weight: 700;
-    color: #666666;
+    color: #fff;
     margin-bottom: 15px;
 }
 
@@ -761,6 +776,10 @@ div.div img {
     padding: 0;
 }
 
+.experience a{
+    color: #666666;
+}
+
 .experience .section-header p {
     margin: 0;
 }
@@ -768,7 +787,7 @@ div.div img {
 .experience .exp-column {
     margin-top: 30px;
     padding: 25px 30px;
-    background: #e9ecef;
+    background: var(--color_tints_9);
 }
 
 .experience .exp-column::before {
@@ -803,7 +822,7 @@ div.div img {
 
 .experience .exp-date {
     margin-bottom: 5px;
-    color: #666666;
+    color: var(--background_color);
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 2px;
@@ -823,7 +842,7 @@ div.div img {
 
 .experience .exp-designation {
     margin-bottom: 10px;
-    color: #999999;
+    color: var(--background_color);
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
@@ -831,6 +850,7 @@ div.div img {
 
 .experience .exp-detail {
     margin-bottom: 0;
+    color: var(--background_color);
 }
 
 
@@ -842,7 +862,7 @@ div.div img {
 .services {
     padding: 60px 0;
     text-align: center;
-    background: #ffffff;
+    background: var(--background_color);
 }
 
 .services .section-header {
@@ -859,7 +879,7 @@ div.div img {
     font-weight: 300;
     margin: 30px 0 0;
     padding: 25px 15px 30px 15px;
-    background: #e9ecef;
+    background: var(--color_tints_9);
 }
 
 .services .single-service::before {
@@ -909,10 +929,12 @@ div.div img {
     letter-spacing: 0;
     text-transform: uppercase;
     margin-bottom: 10px;
+    color: var(--color_dominante);
 }
 
 .services .single-service p {
     margin-bottom: 0;
+    color: var(--background_color);
 }
 
 .services .single-service span {
@@ -1368,7 +1390,7 @@ div.techs img:hover{
 
 .contact .contact-info p {
     margin-bottom: 10px;
-    color: #666666;
+    color: var(--color_tints_9);
     font-size: 22px;
     font-weight: 300;
 }
@@ -1380,7 +1402,7 @@ div.techs img:hover{
 }
 
 .contact .contact-info a {
-    color: #666666;
+    color: var(--color_tints_9);
 }
 
 @media (max-width: 767px) {
@@ -1395,7 +1417,7 @@ div.techs img:hover{
 
 .contact .contact-info i {
     width: 30px;
-    color: var(--color_dominante);
+    color: var(--color_tints_3);
 }
 
 .contact .social {
@@ -1411,15 +1433,15 @@ div.techs img:hover{
     padding: 1px 0;
     text-align: center;
     font-size: 22px;
-    border: 1px solid var(--color_dominante);
+    border: 1px solid var(--color_tints_3);
 }
 
 .contact .social a i {
-    color: var(--color_dominante);
+    color: var(--color_tints_3);
 }
 
 .contact .social a:hover {
-    background: var(--color_dominante);
+    background: var(--color_tints_3);
 }
 
 .contact .social a:hover i {
@@ -1433,9 +1455,9 @@ div.techs img:hover{
 
 .contact .form input,
 .contact .form textarea {
-    color: #666666;
+    color: var(--background_color);
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     padding: 10px 0;
     border: none;
     border-bottom: 1px solid var(--color_dominante);
@@ -1472,11 +1494,11 @@ div.techs img:hover{
     position:relative;
     padding: 30px 0;
     text-align: center;
-    background: #222222;
+    background: var(--color_dominante);
 }
 
 .footer .copyright p {
-    color: #999999;
+    color: #fff;
     font-size: 18px;
     font-weight: 300;
 }
