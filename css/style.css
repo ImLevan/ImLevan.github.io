@@ -18,7 +18,10 @@ body {
     color: #666666;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    background: var(--background_color);
+    background: rgb(10 10 10);
+    /*background: var(--background_color);*/
+    background-image: radial-gradient(ellipse at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
+    /*background-image: radial-gradient(ellipse at 50% -20%, #0b0105, rgba(11, 1, 5, 0.5), #220409);*/
 }
 
 a {
@@ -862,7 +865,6 @@ div.div img {
 .services {
     padding: 60px 0;
     text-align: center;
-    background: var(--background_color);
 }
 
 .services .section-header {
