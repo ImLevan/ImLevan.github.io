@@ -576,6 +576,12 @@ h6 {
     grid-row-gap: 9px;
 }
 
+@media screen and (max-width:992px) {
+    #about .row{
+        display: block;
+    }
+}
+
 @media screen and (max-width:776px) {
     .parent{
         grid-template-columns: repeat(2, 1fr);
