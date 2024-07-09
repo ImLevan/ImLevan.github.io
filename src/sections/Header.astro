@@ -1,0 +1,417 @@
+<div class="header sticky">
+    <div class="container">
+        <div class="logo pull-left">
+            <h1>
+                <a href="#top-header"
+                    ><img
+                        src="/img/top-header/logoVC.jpg"
+                        alt="logoVC"
+                        id="img-logo"
+                    /></a
+                >
+            </h1>
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="#top-header">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#portfolio">Proyectos</a></li>
+                <li><a href="#skills-section">Habilidades</a></li>
+                <li><a href="#experience">Estudios</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Iconos del menu repsonsive -->
+        <div id="icono-nav">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav social-nav pull-right d-none d-lg-inline">
+            <a
+                href="https://www.instagram.com/chianesevalentin/"
+                target="_blank"><i class="fa fa-instagram"></i></a
+            >
+            <a
+                href="https://ar.linkedin.com/in/valentin-chianese"
+                target="_blank"><i class="fa fa-linkedin"></i></a
+            >
+            <a href="https://github.com/ImLevan" target="_blank"
+                ><i class="fa fa-github"></i></a
+            >
+        </nav>
+    </div>
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav">
+        <ul class="nav-menu">
+            <li><a href="#top-header">Inicio</a></li>
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#portfolio">Proyectos</a></li>
+            <li><a href="#skills-section">Habilidades</a></li>
+            <li><a href="#experience">Estudios</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-body-overly"></div>
+</div>
+
+<style>
+    .header {
+        background: var(--color_dominante);
+        height: 70px;
+    }
+
+    .header.sticky {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .header .logo {
+        margin: 14px 25px 0 0;
+    }
+
+    .header .logo h1 {
+        margin-top: -8px;
+    }
+
+    .header .logo h1 a,
+    .header .logo h1 a:hover {
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        .header.stikcy {
+            height: 50px;
+        }
+
+        .header.stikcy .logo {
+            margin: 10px 0 0 0;
+        }
+
+        .header.stikcy .logo h1 {
+            padding: 2px 0;
+            font-size: 26px;
+        }
+    }
+
+    .header .social-nav {
+        margin-top: 15px;
+    }
+
+    .header .social-nav a {
+        font-size: 24px;
+        margin-left: 15px;
+        color: #fff;
+    }
+
+    .header .social-nav a:hover {
+        color: var(--background_color);
+    }
+
+    .nav-menu,
+    .nav-menu * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-menu ul {
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 0;
+        z-index: 99;
+    }
+
+    .nav-menu li {
+        position: relative;
+        white-space: nowrap;
+    }
+
+    .nav-menu > li {
+        float: left;
+    }
+
+    .nav-menu li:hover > ul,
+    .nav-menu li.sfHover > ul {
+        display: block;
+    }
+
+    .nav-menu ul ul {
+        top: 0;
+        left: 100%;
+    }
+
+    .nav-menu ul li {
+        min-width: 180px;
+    }
+
+    .sf-arrows .sf-with-ul {
+        padding-right: 30px;
+    }
+
+    .sf-arrows .sf-with-ul:after {
+        content: "\f107";
+        position: absolute;
+        right: 15px;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    .sf-arrows ul .sf-with-ul:after {
+        content: "\f105";
+    }
+
+    #nav-menu-container {
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        #nav-menu-container {
+            display: none;
+        }
+    }
+
+    .nav-menu a {
+        padding: 22px 15px;
+        text-decoration: none;
+        display: inline-block;
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu li:hover > a,
+    .nav-menu .menu-active > a {
+        color: var(--background_color);
+    }
+
+    @media (max-width: 992px) {
+        .nav-menu a {
+            font-size: 12px;
+        }
+    }
+
+    .nav-menu ul {
+        margin: 7px 0 0 15px;
+        -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.08);
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-menu ul li {
+        background: #ffffff;
+        border-top: 1px solid #f4f4f4;
+    }
+
+    .nav-menu ul li:first-child {
+        border-top: 0;
+    }
+
+    .nav-menu ul li:hover {
+        background: var(--color_dominante);
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+    .nav-menu ul li a {
+        color: #333333;
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+        padding: 10px 15px;
+    }
+
+    .nav-menu ul li a:hover {
+        color: #ffffff;
+    }
+
+    .nav-menu ul ul {
+        margin: 0;
+    }
+
+    #mobile-nav {
+        display: none;
+    }
+
+    #icono-nav {
+        display: none;
+    }
+
+    #img-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    @media (max-width: 768px) {
+        #mobile-nav-toggle {
+            display: inline;
+        }
+
+        #mobile-nav {
+            display: block;
+        }
+
+        #icono-nav {
+            display: block;
+        }
+
+        .logo {
+            width: 100%;
+            text-align: center;
+        }
+
+        #mobile-nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: block !important;
+        }
+
+        #mobile-nav ul li {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        #mobile-nav ul li a {
+            color: #ffffff;
+            font-size: 16px;
+            overflow: hidden;
+            padding: 10px 22px 10px 15px;
+            position: relative;
+            text-decoration: none;
+            width: 100%;
+            display: block;
+            outline: none;
+        }
+
+        #mobile-nav ul li a:hover {
+            color: var(--color_dominante);
+        }
+
+        body.mobile-nav-active {
+            overflow: hidden;
+        }
+
+        body.mobile-nav-active #mobile-nav {
+            left: 0;
+        }
+
+        body.mobile-nav-active #mobile-nav-toggle {
+            color: #ffffff;
+        }
+
+        /* Estilos para el icono del menú responsive */
+        #icono-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* Estilos para el overlay del menú móvil */
+        #mobile-body-overly {
+            width: 100%;
+            height: 100%;
+            z-index: 997;
+            top: 0;
+            left: 0;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            pointer-events: none; /* Agregar esta línea para permitir clics en los enlaces debajo */
+        }
+
+        /* Estilos para el menú móvil */
+        #mobile-nav {
+            position: fixed;
+            top: 0;
+            padding-top: 18px;
+            bottom: 0;
+            z-index: 998;
+            background: rgba(0, 0, 0, 0.9);
+            left: -260px;
+            width: 260px;
+            overflow-y: auto;
+            transition: 0.4s;
+        }
+    }
+</style>
+
+<script>
+    // ** SCROLL ** //
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-menu a");
+
+        // Función de tiempo para un efecto de desplazamiento suave
+        function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const targetId = this.getAttribute("href");
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const start = window.pageYOffset;
+                    const target = targetElement.offsetTop;
+                    const duration = 1000; // Duración en milisegundos
+
+                    const startTime = performance.now();
+
+                    function scroll(time) {
+                        const elapsed = time - startTime;
+                        const progress = easeInOutCubic(elapsed / duration);
+                        const newPosition = start + (target - start) * progress;
+
+                        window.scrollTo(0, newPosition);
+
+                        if (elapsed < duration) {
+                            requestAnimationFrame(scroll);
+                        }
+                    }
+
+                    requestAnimationFrame(scroll);
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    var mobileNavToggle = document.getElementById("icono-nav");
+    mobileNavToggle.addEventListener("click", () => {
+        var body = document.body;
+        var mobileNav = document.getElementById("mobile-nav");
+        var mobileBodyOverlay = document.getElementById("mobile-body-overly");
+
+        if (mobileNav && mobileNavToggle && mobileBodyOverlay) {
+            if (body.classList.contains("mobile-nav-active")) {
+                body.classList.remove("mobile-nav-active");
+                mobileNavToggle.querySelector("i").classList.remove("fa-times");
+                mobileNavToggle.querySelector("i").classList.add("fa-bars");
+                mobileBodyOverlay.style.display = "none";
+            } else {
+                body.classList.add("mobile-nav-active");
+                mobileNavToggle.querySelector("i").classList.remove("fa-bars");
+                mobileNavToggle.querySelector("i").classList.add("fa-times");
+                mobileBodyOverlay.style.display = "block";
+            }
+        }
+    });
+</script>

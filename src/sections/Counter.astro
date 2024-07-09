@@ -1,0 +1,88 @@
+<div class="counters">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="counter">
+                    <div class="counter-icon-box">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="number animateNumber" data-toggle="counter-up">
+                        <span>5</span>
+                    </div>
+                    <h4 class="font-weight">
+                        Años de experiencia académica/personal
+                    </h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="counter">
+                    <div class="counter-icon-box">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <div class="number animateNumber" data-toggle="counter-up">
+                        <span>10</span>
+                    </div>
+                    <h4 class="font-weight">Proyectos completados</h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="counter">
+                    <div class="counter-icon-box">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <div class="number animateNumber" data-toggle="counter-up">
+                        <span>3</span>
+                    </div>
+                    <h4 class="font-weight">Clientes</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .counters {
+        padding: 60px 0;
+        position: relative;
+        text-align: center;
+        color: #ffffff;
+        background: var(--color_dominante);
+    }
+
+    .counters .counter .counter-icon-box {
+        color: #ffffff;
+        margin: 0;
+        font-size: 50px;
+        transition: all 400ms linear 0s;
+    }
+
+    .counters .counter:hover .counter-icon-box {
+        transform: translateY(-15px);
+    }
+
+    .counters .counter .number {
+        font-size: 70px;
+        margin: 0 0 15px;
+        color: #ffffff;
+        font-weight: 700;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .counters .number:after {
+        color: #fff;
+        content: "+";
+        font-size: 40px;
+        position: absolute;
+        top: calc(50% + 25px);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .counters .counter h4 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+</style>

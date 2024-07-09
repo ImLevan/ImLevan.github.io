@@ -1,0 +1,41 @@
+<div class="footer">
+    <div class="container">
+        <div class="copyright">
+            <p>VC <span id="year"></span></p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .footer {
+        position: relative;
+        padding: 30px 0;
+        text-align: center;
+        background: var(--color_dominante);
+    }
+
+    .footer .copyright p {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .footer .copyright p:last-child {
+        margin: 0;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const yearElement = document.getElementById('year');
+
+        // Obtener la fecha actual
+        const fechaActual = new Date();
+
+        // Obtener el año actual de la fecha
+        const añoActual = fechaActual.getFullYear();
+
+        // Actualizar el contenido del elemento del footer con el año actual
+        yearElement.textContent = añoActual.toString();
+    });
+</script>

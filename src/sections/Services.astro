@@ -1,0 +1,135 @@
+<div class="services" id="services">
+    <div class="container">
+        <header class="section-header">
+            <h3>Mis Servicios</h3>
+            <p>
+                Como desarrollador backend y frontend con experiencia en el
+                desarrollo de aplicaciones web y aplicaciones de escritorio,
+                estos son los servicios que ofrezco.
+            </p>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="single-service">
+                    <span></span>
+                    <div class="service-icon">
+                        <i class="fa fa-television"></i>
+                    </div>
+                    <h4>Desarrollo de Apps de Escritorio</h4>
+                    <p>
+                        Lenguajes como Java, Python para la creación de estas
+                        apps
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="single-service">
+                    <span></span>
+                    <div class="service-icon"><i class="fa fa-laptop"></i></div>
+                    <h4>Desarrollo Web</h4>
+                    <p>
+                        Implementación de autenticación de usuarios, bases de
+                        datos, API, etc
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="single-service">
+                    <span></span>
+                    <div class="service-icon"><i class="fa fa-globe"></i></div>
+                    <h4>Webs estáticas</h4>
+                    <p>Diseño y desarrollo de webs estáticas y landing pages</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .services {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .services .section-header {
+        text-align: left;
+    }
+
+    .services .section-header p {
+        margin: 0;
+    }
+
+    .services .single-service {
+        position: relative;
+        text-align: center;
+        font-weight: 300;
+        margin: 30px 0 0;
+        padding: 25px 15px 30px 15px;
+        background: var(--color_tints_9);
+    }
+
+    .services .single-service::before {
+        position: absolute;
+        content: "";
+        height: 3px;
+        top: 0;
+        right: 100%;
+        left: 0;
+        background: var(--color_dominante);
+    }
+
+    .services .single-service::after {
+        position: absolute;
+        content: "";
+        height: 3px;
+        bottom: 0;
+        right: 0;
+        left: 100%;
+        background: var(--color_dominante);
+    }
+
+    .services .single-service:hover::before {
+        transition: 0.3s;
+        right: 0;
+    }
+
+    .services .single-service:hover::after {
+        transition: 0.3s;
+        left: 0;
+    }
+
+    .services .single-service .service-icon {
+        font-size: 60px;
+        line-height: 60px;
+        margin: 0 auto 20px;
+        text-align: center;
+        width: 120px;
+        color: var(--color_dominante);
+    }
+
+    .services .single-service h4,
+    .services .single-service h4 a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: var(--color_dominante);
+    }
+
+    .services .single-service p {
+        margin-bottom: 0;
+        color: var(--background_color);
+    }
+
+    .services .single-service span {
+        position: absolute;
+        height: 100%;
+        width: 0;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+</style>

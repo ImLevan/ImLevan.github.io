@@ -1,0 +1,390 @@
+---
+const { project } = Astro.props;
+---
+
+<div class=`proyecto ${project.projectClass}`>
+    <div class="contenedor-proyecto">
+        <div class="imagen-proyecto">
+            <img src=`/img/portfolio/${project.projectImage}` alt="imagen del proyecto">
+        </div>
+        <div class="info-proyecto">
+            <h3>{project.projectTitle}</h3>
+            <p>{project.projectDescription}</p>
+            <br>
+            <div class="repositorio-github">
+                <div class="techs">
+                    {project.projectTechs.map((tech: any) => (
+                        <img
+                            src={`/img/${tech.img}`}
+                            alt="Descripcion de la imagen" 
+                            title={tech.title}
+                        />
+                    ))}
+                </div>
+                <div class="links">
+                    {project.projectLinks.map((link: any) => (
+                        <a
+                            href={link.href}
+                            target="_blank"
+                            title={link.title}
+                        >
+                            <i class={link.icon}></i>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<style>
+    .proyecto {
+        max-width: 700px;
+        border: 1px solid #000;
+        margin: 20px 10px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .proyecto .imagen-proyecto img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+
+    .proyecto:hover .imagen-proyecto img {
+        filter: blur(16px);
+    }
+
+    .info-proyecto {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.959);
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        opacity: 0;
+        transition: 0.5s;
+        font-weight: bold;
+    }
+
+    .proyecto .info-proyecto h3 {
+        font-size: 23px;
+        color: #fff;
+        margin: 0;
+    }
+
+    .proyecto .info-proyecto h4 {
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .proyecto .info-proyecto p {
+        font-size: 18px;
+        margin: 0;
+        color: #ff5080;
+    }
+
+    .proyecto:hover .info-proyecto {
+        opacity: 1;
+    }
+
+    .repositorio-github a {
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        margin: 0 14px 0 2px;
+        font-size: 38px;
+    }
+
+    .repositorio-github {
+        justify-content: space-between;
+    }
+
+    div.techs {
+        margin-top: 60px;
+    }
+
+    div.techs img {
+        height: 42px;
+        width: 42px;
+        margin: 17px 12px 10px 0;
+    }
+
+    div.techs img:hover {
+        transform: scale(1.8);
+    }
+
+    .links {
+        display: flex;
+    }
+
+    .repositorio-github a:hover {
+        color: var(--color_dominante);
+    }
+
+    @media screen and (max-width: 1199px) {
+        .proyecto .info-proyecto h3 {
+            font-size: 20px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 14px;
+        }
+
+        div.techs {
+            margin-top: 40px;
+        }
+
+        div.techs img {
+            height: 38px;
+            width: 38px;
+        }
+
+        .repositorio-github a {
+            font-size: 34px;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .proyecto {
+            margin: 10px auto;
+            max-width: 80%;
+        }
+
+        .proyecto {
+            max-width: 100%; /* El ancho será el 100% del contenedor padre */
+            margin: 20px 0; /* Elimina el margen horizontal para ajustarse al ancho */
+        }
+
+        .proyecto .info-proyecto {
+            width: 100%; /* El ancho será el 100% del contenedor padre */
+            padding: 5px; /* Ajusta el espacio interno para que el texto no se desborde */
+        }
+
+        .proyecto .info-proyecto h3 {
+            font-size: 15px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 12px;
+        }
+
+        .repositorio-github a {
+            font-size: 18px;
+        }
+
+        div.techs img {
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .proyecto {
+            margin: 10px auto;
+            max-width: 80%;
+        }
+
+        .proyecto {
+            max-width: 100%; /* El ancho será el 100% del contenedor padre */
+            margin: 20px 0; /* Elimina el margen horizontal para ajustarse al ancho */
+        }
+
+        .proyecto .info-proyecto {
+            width: 100%; /* El ancho será el 100% del contenedor padre */
+            padding: 5px; /* Ajusta el espacio interno para que el texto no se desborde */
+        }
+
+        .proyecto .info-proyecto h3 {
+            font-size: 12px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 10px;
+        }
+
+        div.techs {
+            margin-top: 10px;
+        }
+
+        .repositorio-github a {
+            font-size: 13px;
+        }
+
+        div.techs img {
+            height: 15px;
+            width: 15px;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .proyecto .info-proyecto h4,
+        .proyecto .info-proyecto h3 {
+            font-size: 20px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 17px;
+        }
+
+        .repositorio-github a {
+            font-size: 30px;
+            margin-left: 10px;
+        }
+
+        div.techs {
+            margin-top: 50px;
+        }
+
+        div.techs img {
+            height: 40px;
+            width: 40px;
+            margin: 6px 6px 12px 6px;
+        }
+    }
+
+    @media screen and (max-width: 460px) {
+        .proyecto .info-proyecto h4,
+        .proyecto .info-proyecto h3 {
+            font-size: 16px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 13px;
+        }
+
+        .repositorio-github a {
+            font-size: 22px;
+            margin-left: 10px;
+        }
+
+        div.techs img {
+            height: 30px;
+            width: 30px;
+            margin: 6px 6px 10px 6px;
+        }
+    }
+
+    @media screen and (max-width: 410px) {
+        .proyecto .info-proyecto h4,
+        .proyecto .info-proyecto h3 {
+            font-size: 14px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 10px;
+        }
+
+        .repositorio-github a {
+            font-size: 19px;
+            margin-left: 10px;
+        }
+
+        div.techs img {
+            height: 23px;
+            width: 23px;
+            margin: 6px 6px 10px 6px;
+        }
+    }
+
+    @media screen and (max-width: 363px) {
+        .proyecto .info-proyecto h4,
+        .proyecto .info-proyecto h3 {
+            font-size: 10px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 8px;
+        }
+
+        .repositorio-github a {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        div.techs img {
+            height: 18px;
+            width: 18px;
+            margin: 6px 6px 10px 6px;
+        }
+    }
+
+    @media screen and (max-width: 340px) {
+        .proyecto .info-proyecto h4,
+        .proyecto .info-proyecto h3 {
+            font-size: 15px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 10px;
+        }
+
+        .repositorio-github a {
+            font-size: 17px;
+            margin-left: 10px;
+        }
+
+        div.techs img {
+            height: 22px;
+            width: 22px;
+            margin: 6px 6px 0 6px;
+        }
+    }
+
+    @media screen and (max-width: 330px) {
+        .proyecto .info-proyecto h4,
+        .proyecto .info-proyecto h3 {
+            font-size: 10px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 9px;
+        }
+
+        .repositorio-github a {
+            font-size: 10px;
+            margin-left: 10px;
+        }
+
+        div.techs {
+            margin-top: 30px;
+        }
+
+        div.techs img {
+            height: 14px;
+            width: 14px;
+            margin: 6px 6px 10px 6px;
+        }
+    }
+
+    @media screen and (max-width: 330px) {
+        .proyecto .info-proyecto h4,
+        .proyecto .info-proyecto h3 {
+            font-size: 8px;
+        }
+
+        .proyecto .info-proyecto p {
+            font-size: 7px;
+        }
+
+        .repositorio-github a {
+            font-size: 8px;
+            margin-left: 10px;
+        }
+
+        div.techs {
+            margin-top: 20px;
+        }
+
+        div.techs img {
+            height: 10px;
+            width: 10px;
+            margin: 6px 6px 10px 6px;
+        }
+    }
+</style>

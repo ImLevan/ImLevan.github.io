@@ -1,0 +1,181 @@
+<div class="top-header" id="top-header">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="img/top-header/logoVC.jpg" alt="logoVC" />
+            </div>
+
+            <div class="col-md-12">
+                <h1>Soy <span>Valentin</span> Chianese</h1>
+            </div>
+
+            <div class="col-md-12 h2">
+                <h2 class="span-text"><span id="typing-span"></span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-down-indicator">
+        <a href="#about">
+            <i class="fa fa-angle-down"></i>
+        </a>
+    </div>
+</div>
+
+<style>
+    .top-header {
+        display: table;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        color: #ffffff;
+    }
+
+    .top-header:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: url("/img/top-header/Hero.webp");
+        background-size: cover;
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        z-index: -1;
+    }
+
+    .top-header .container {
+        position: relative;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    .top-header img {
+        height: 200px;
+        margin-bottom: 30px;
+        border: 15px solid rgba(256, 256, 256, 0.1);
+    }
+
+    .top-header h1 {
+        font-size: 5vw;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .top-header h1 span {
+        color: var(--color_dominante);
+    }
+
+    .top-header h2 {
+        display: inline-block;
+        margin: 0;
+        font-size: 3vw;
+        font-weight: 400;
+        color: #ffffff;
+        padding-right: 10px;
+    }
+
+    .top-header .typed-cursor {
+        font-size: 3vw;
+    }
+
+    .col-md-12.h2 {
+        height: 6em; /* Establecer un alto fijo */
+        overflow: hidden; /* Ocultar cualquier contenido adicional que podría salir del contenedor */
+    }
+
+    .span-text {
+        display: inline-block;
+        font-family: "Roboto", sans-serif;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .span-text::after {
+        content: "|";
+        position: absolute;
+        top: 0;
+        right: -24px;
+        height: 100%;
+        animation: blink 0.5s infinite step-end alternate;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .scroll-down-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: var(--color_dominante);
+        border-radius: 50%;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .scroll-down-indicator i {
+        color: #ffffff;
+        font-size: 20px;
+    }
+</style>
+
+<script>
+    const words = [
+        "Técnico Universitario en Informática",
+        "Desarrollador de Software",
+        "Desarrollador Backend",
+        "Desarrollador Frontend",
+    ];
+
+    const typingSpan = document.getElementById("typing-span");
+    let currentWordIndex = 0;
+    let isDeleting = false;
+    let currentText = "";
+    let charIndex = 0;
+
+    function typeNextWord() {
+        const currentWord = words[currentWordIndex];
+
+        if (isDeleting) {
+            currentText = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            currentText = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        typingSpan.textContent = currentText;
+
+        // Ajustar la velocidad del borrado
+        const deleteSpeed = isDeleting ? 20 : 80;
+
+        if (!isDeleting && currentText === currentWord) {
+            isDeleting = true;
+            setTimeout(typeNextWord, 1500);
+        } else if (isDeleting && currentText === "") {
+            isDeleting = false;
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            setTimeout(typeNextWord, 500);
+        } else {
+            setTimeout(typeNextWord, isDeleting ? deleteSpeed : 100);
+        }
+    }
+
+    typeNextWord();
+</script>

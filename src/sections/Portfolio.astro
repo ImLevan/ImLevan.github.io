@@ -1,0 +1,196 @@
+---
+import Proyecto from "../components/Proyecto.astro";
+import { allProjects } from "../utilities/projects";
+---
+
+<div class="portfolio" id="portfolio">
+    <div class="container">
+        <header class="section-header">
+            <h3 class="section-title">Proyectos</h3>
+            <p>
+                Pégale un vistazo a los proyectos en los que estuve trabajando y
+                voy a seguir actualizándolos, alguno más ambicioso que otro.
+                Espero que te parezcan interesantes.
+            </p>
+        </header>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">Todos</li>
+                    <li data-filter="web-dev">Desarrollo web</li>
+                    <li data-filter="app-dev">Desarrollo de aplicaciones</li>
+                </ul>
+            </div>
+        </div>
+        <section id="portfolio">
+            <h3 class="titulo-seccion">MIS PROYECTOS</h3>
+            <div class="fila-proyectos">
+                {
+                    allProjects.map((project: any) => (
+                        <Proyecto project={project} />
+                    ))
+                }
+                <div class="mensaje-sin-proyectos" style="display: none;">
+                    No hay proyectos disponibles en esta categoría.
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+    .portfolio {
+        position: relative;
+        clear: both;
+        padding: 60px 0 30px 0;
+    }
+
+    .portfolio .section-header p {
+        margin-bottom: 30px;
+    }
+
+    .portfolio #portfolio-flters {
+        padding: 0;
+        margin: -15px 0 30px 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    .portfolio #portfolio-flters li {
+        cursor: pointer;
+        margin: 15px -3px 5px -3px;
+        display: inline-block;
+        padding: 10px 15px;
+        color: var(--color_dominante);
+        font-size: 14px;
+        line-height: 15px;
+        text-transform: uppercase;
+        border: 1px solid var(--color_dominante);
+        background: #ffffff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .portfolio #portfolio-flters li:hover,
+    .portfolio #portfolio-flters li.filter-active {
+        background: var(--color_dominante);
+        color: #ffffff;
+    }
+
+    .portfolio #portfolio-flters li:last-child {
+        margin-right: 0;
+    }
+
+    #portfolio {
+        max-width: 1100px;
+        padding: 0;
+        margin: auto;
+    }
+
+    #portfolio .titulo-seccion {
+        text-align: center;
+        font-size: 22px;
+        text-transform: uppercase;
+        color: #ff5080;
+        text-decoration: underline;
+        text-decoration-color: #d3d3d3;
+        text-decoration-thickness: 5px;
+    }
+
+    #portfolio .fila-proyectos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    }
+
+    @media screen and (max-width: 991px) {
+        #portfolio {
+            padding: 50px 0;
+        }
+
+        #portfolio .fila {
+            display: block;
+        }
+
+        #portfolio .fila .proyecto {
+            margin: 10px auto;
+            max-width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        #portfolio {
+            padding: 50px 0;
+        }
+
+        #portfolio .fila {
+            display: block;
+        }
+
+        #portfolio .fila-proyectos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 15px;
+            grid-row-gap: 15px;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        #portfolio .fila-proyectos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+       
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterItems = document.querySelectorAll("#portfolio-flters li");
+        const portfolioItems = document.querySelectorAll(".proyecto");
+
+        // Itera sobre los elementos y asegúrate de que son HTMLElements
+        const filterItemsArray = Array.from(filterItems) as HTMLElement[];
+        const portfolioItemsArray = Array.from(portfolioItems) as HTMLElement[];
+
+        filterItemsArray.forEach((filterItem) => {
+            filterItem.addEventListener("click", function () {
+                // Cambia la clase activa en el filtro
+                filterItemsArray.forEach((item) =>
+                    item.classList.remove("filter-active"),
+                );
+                this.classList.add("filter-active");
+
+                const targetCategory = this.getAttribute("data-filter");
+
+                // Muestra u oculta los proyectos según la categoría
+                portfolioItemsArray.forEach((item) => {
+                    if (
+                        targetCategory === "*" ||
+                        item.classList.contains(targetCategory)
+                    ) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                // Si no hay proyectos visibles, muestra un mensaje
+                const visibleProjects = portfolioItemsArray.filter(
+                    (item) => item.style.display === "block",
+                );
+                const mensajeSinProyectos = document.querySelector(
+                    ".mensaje-sin-proyectos",
+                ) as HTMLElement;
+
+                if (visibleProjects.length === 0) {
+                    mensajeSinProyectos.style.display = "block";
+                } else {
+                    mensajeSinProyectos.style.display = "none";
+                }
+            });
+        });
+    });
+</script>

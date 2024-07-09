@@ -1,0 +1,184 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<meta
+			name="description"
+			content="Valentin Chianese, Técnico Universitario en Informática y Desarrollador de software con experiencia en la creación de aplicaciones web y de escritorio. Mí portafolio presenta una variedad de proyectos, desde aplicaciones simples hasta proyectos complejos."
+		/>
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://imlevan.github.io/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Valentin Chianese" />
+		<meta
+			property="og:description"
+			content="Valentin Chianese, Técnico Universitario en Informática y Desarrollador de software con experiencia en la creación de aplicaciones web y de escritorio. Mí portafolio presenta una variedad de proyectos, desde aplicaciones simples hasta proyectos complejos."
+		/>
+		<meta property="og:image" content="img/logo/logoVC.jpg" />
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="imlevan.github.io" />
+		<meta property="twitter:url" content="https://imlevan.github.io/" />
+		<meta name="twitter:title" content="Valentin Chianese" />
+		<meta
+			name="twitter:description"
+			content="Valentin Chianese, Técnico Universitario en Informática y Desarrollador de software con experiencia en la creación de aplicaciones web y de escritorio. Mí portafolio presenta una variedad de proyectos, desde aplicaciones simples hasta proyectos complejos."
+		/>
+		<meta name="twitter:image" content="img/logo/logoVC.jpg" />
+
+		<!-- Favicon -->
+		<link rel="icon" href="img/logo/logoVC.jpg" />
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Solway:400,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- CSS Libraries -->
+		<link
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
+		<link
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet"
+		/>
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--color_dominante: #740b37;
+		--background_color: #0b0105;
+		--color_tints_9: #e3ced7;
+		--color_tints_3: #81234b;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		font-family: "Roboto", sans-serif;
+	}
+
+	body {
+		color: #666666;
+		font-family: "Roboto", sans-serif;
+		font-weight: 300;
+		background: rgb(10 10 10);
+		/*background: var(--background_color);*/
+		background-image: radial-gradient(
+			ellipse at 50% -20%,
+			rgba(120, 119, 198, 0.3),
+			rgba(255, 255, 255, 0)
+		);
+		/*background-image: radial-gradient(ellipse at 50% -20%, #0b0105, rgba(11, 1, 5, 0.5), #220409);*/
+	}
+
+	a {
+		color: var(--color_dominante);
+		transition: 0.5s;
+	}
+
+	a:hover,
+	a:active,
+	a:focus {
+		color: #666666;
+		outline: none;
+		text-decoration: none;
+	}
+
+	p {
+		padding: 0;
+		margin: 0 0 15px 0;
+		color: var(--color_tints_9);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Roboto", sans-serif;
+		color: #ffffff;
+		margin: 0 0 15px 0;
+		padding: 0;
+	}
+
+	.section-header h2,
+	.section-header h3 {
+		display: inline-block;
+		color: var(--color_tints_3);
+		font-size: 35px;
+		text-transform: capitalize;
+		text-align: left;
+		font-weight: 700;
+		position: relative;
+		padding-bottom: 5px;
+		border-bottom: 1px solid var(--color_dominante);
+	}
+
+	.section-header h2::before,
+	.section-header h3::before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		bottom: 0px;
+		right: 0;
+		border-top: 10px solid;
+		border-right: 10px solid;
+		border-color: transparent var(--color_dominante);
+	}
+
+	.section-header h2::after,
+	.section-header h3::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		bottom: 0px;
+		left: 0;
+		border-top: 10px solid;
+		border-left: 10px solid;
+		border-color: transparent var(--color_dominante);
+	}
+
+	.section-header p {
+		text-align: left;
+		padding-bottom: 0px;
+		font-size: 19px;
+	}
+
+	@media (min-width: 992px) {
+		.section-header p {
+			width: 70%;
+		}
+	}
+</style>

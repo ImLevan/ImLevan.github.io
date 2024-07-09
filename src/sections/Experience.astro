@@ -1,0 +1,153 @@
+<div class="experience" id="experience">
+    <div class="container">
+        <header class="section-header">
+            <h3>Estudios Académicos</h3>
+            <p>
+                Información sobre mis estudios universitarios con relación a la
+                industria IT.
+            </p>
+        </header>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="exp-column">
+                    <p class="exp-date">
+                        Marzo-2019 <span>hasta</span> Diciembre-2023
+                    </p>
+                    <h4 class="exp-company">
+                        Tecnicatura Universitaria en Informática
+                    </h4>
+                    <h4 class="exp-designation">
+                        Universidad Nacional de General Sarmiento
+                    </h4>
+                    <p class="exp-detail">- Finalizada</p>
+                    <p class="exp-detail">- Total de 21 materias</p>
+                    <a
+                        href="https://www.ungs.edu.ar/carrera/tecnicatura-universitaria-en-informatica"
+                        target="_blank">Plan de estudios</a
+                    >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="exp-column">
+                    <p class="exp-date">
+                        Marzo-2019 <span>hasta</span> Actualidad
+                    </p>
+                    <h4 class="exp-company">Licenciatura en Sistemas</h4>
+                    <h4 class="exp-designation">
+                        Universidad Nacional de General Sarmiento
+                    </h4>
+                    <p class="exp-detail">- Materias aprobadas: 22</p>
+                    <p class="exp-detail">
+                        - Cantidad de materias de la carrera: 33
+                    </p>
+                    <a
+                        href="https://www.ungs.edu.ar/carrera/licenciatura-en-sistemas"
+                        target="_blank">Plan de estudios</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .about a,
+    .experience a {
+        display: inline-block;
+        padding: 6px 20px;
+        color: var(--color_tints_9);
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        border: 1px solid var(--color_dominante);
+        margin-top: 20px;
+    }
+
+    .about a:hover,
+    .experience a:hover {
+        color: #ffffff;
+        background: var(--color_dominante);
+    }
+
+    .experience {
+        position: relative;
+        padding: 0;
+    }
+
+    .experience a {
+        color: #666666;
+    }
+
+    .experience .section-header p {
+        margin: 0;
+    }
+
+    .experience .exp-column {
+        margin-top: 30px;
+        padding: 25px 30px;
+        background: var(--color_tints_9);
+    }
+
+    .experience .exp-column::before {
+        position: absolute;
+        content: "";
+        height: 3px;
+        top: 30px;
+        right: 100%;
+        left: 15px;
+        background: var(--color_dominante);
+    }
+
+    .experience .exp-column::after {
+        position: absolute;
+        content: "";
+        height: 3px;
+        bottom: 0;
+        right: 15px;
+        left: 100%;
+        background: var(--color_dominante);
+    }
+
+    .experience .exp-column:hover::before {
+        transition: 0.3s;
+        right: 15px;
+    }
+
+    .experience .exp-column:hover::after {
+        transition: 0.3s;
+        left: 15px;
+    }
+
+    .experience .exp-date {
+        margin-bottom: 5px;
+        color: var(--background_color);
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .experience .exp-date span {
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    .experience .exp-company {
+        margin-bottom: 0;
+        color: var(--color_dominante);
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .experience .exp-designation {
+        margin-bottom: 10px;
+        color: var(--background_color);
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    .experience .exp-detail {
+        margin-bottom: 0;
+        color: var(--background_color);
+    }
+</style>

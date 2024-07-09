@@ -1,0 +1,198 @@
+---
+import {
+    frontendSkills,
+    backendSkills,
+    otherSkills,
+} from "../utilities/skills";
+---
+
+<div class="skills-section-class" id="skills-section">
+    <div class="container">
+        <header class="section-header">
+            <h3 class="section-title">Habilidades - Tecnologías</h3>
+        </header>
+        <div class="skills-parent">
+            <div class="skills">
+                <h3>Habilidades Frontend</h3>
+                <div class="parent">
+                    {
+                        frontendSkills.map((skill) => (
+                            <div class="div">
+                                <img
+                                    src={`${skill.img}`}
+                                    alt="Descripción de la imagen"
+                                />
+                                <div class="text-info">
+                                    <h4 class="titulo">{skill.title}</h4>
+                                    <p class="expl">{skill.description}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div class="skills">
+                <h3>Habilidades Backend</h3>
+                <div class="parent">
+                    {
+                        backendSkills.map((skill) => (
+                            <div class="div">
+                                <img
+                                    src={`${skill.img}`}
+                                    alt="Descripción de la imagen"
+                                />
+                                <div class="text-info">
+                                    <h4 class="titulo">{skill.title}</h4>
+                                    <p class="expl">{skill.description}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div class="skills">
+                <h3>Otros</h3>
+                <div class="parent">
+                    {
+                        otherSkills.map((skill) => (
+                            <div class="div">
+                                <img
+                                    src={`${skill.img}`}
+                                    alt="Descripción de la imagen"
+                                />
+                                <div class="text-info">
+                                    <h4 class="titulo">{skill.title}</h4>
+                                    <p class="expl">{skill.description}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .text-info h4,
+    .text-info p {
+        color: #fff;
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 9px;
+    }
+
+    @media screen and (max-width: 776px) {
+        .parent {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 9px;
+        }
+    }
+
+    @media screen and (max-width: 514px) {
+        .parent {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 9px;
+        }
+
+        .parent .div img {
+            height: 45px;
+            width: 45px;
+        }
+
+        .parent .titulo {
+            font-size: 15px;
+        }
+
+        .parent .expl {
+            font-size: 12px;
+        }
+    }
+
+    .skills {
+        margin-bottom: 100px;
+    }
+
+    .div {
+        background-color: var(--color_tints_3);
+        display: flex;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .div:hover {
+        transform: scale(1.05);
+        background-color: #490723;
+    }
+
+    .skills-section-class {
+        margin-top: 90px;
+    }
+
+    .skills-parent {
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .skills-parent h2 {
+        margin-bottom: 20px;
+    }
+
+    .parent div {
+        border-radius: 8px;
+    }
+
+    div.div img {
+        padding-top: 7px;
+        padding-left: 15px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .text-info {
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+
+    .titulo {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .expl {
+        margin: 0;
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    @media (max-width: 992px) {
+        div.skill-name img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .skill-name i {
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 350px) {
+        div.skill-name img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .skill-name i {
+            font-size: 30px;
+        }
+    }
+</style>
