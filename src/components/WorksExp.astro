@@ -1,0 +1,53 @@
+---
+import Briefcase from "./icons/Briefcase.astro";
+import WorksExpItem from "./WorkExpItem.astro";
+const EXPERIENCIE = [
+    {
+        date: "Mayo 2024 - Actualmente...",
+        title: "Desarrollador de software",
+        company: "Boreal Technologies",
+        description:
+            "Colaboro en el desarrollo y mantenimiento de aplicaciones de software. Contribuyo al diseño e implementación de soluciones tecnológicas. Realizar pruebas y depuración de código para garantizar la calidad del producto final. Documento el proceso de desarrollo y las decisiones tomadas.",
+    },
+    {
+        date: "Diciembre 2020 - Mayo 2024",
+        title: "Software Developer",
+        company: "Autónomo",
+        description:
+            "Desarrollador de aplicaciones de escritorio y app webs autónomo, dispuesto a ofrecer soluciones tecnológicas personalizadas, como desarrollo de herramientas a medida para la gestión de inventarios, control de ventas y administración de recursos, que optimizan procesos y mejoran la eficiencia operativa. Podés visualizar mis proyectos en la sección 'Proyectos' de LinkedIn, en donde está todo el detalle de los proyectos en los que estuve involucrado.",
+    },
+];
+---
+<div id="work-exp">
+    <div class="container">
+        <header class="section-header">
+            <h2>
+                <Briefcase class="size-8" />
+                Experiencia laboral
+            </h2>
+        </header>
+        <ol class="experience-list">
+            {
+                EXPERIENCIE.map((experiencie) => (
+                    <li>
+                        <WorksExpItem {...experiencie} />
+                    </li>
+                ))
+            }
+        </ol>
+    </div>
+</div>
+
+<style>
+    #work-exp{
+        max-width: 1100px;
+        padding: 0;
+        margin: auto;
+        margin-bottom: 8rem;
+    }
+
+    .experience-list {
+        position: relative;
+        margin: 3rem 0;
+    }
+</style>

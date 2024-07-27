@@ -1,0 +1,86 @@
+---
+interface Props {
+  title: string
+  company: string
+  description: string
+  link?: string
+  date: string
+}
+
+const { title, company, description, link, date } = Astro.props
+---
+
+<div class="experience-item">
+    <div class="details">
+      <div class="sticky">
+        <span class="bullet">&bull;</span>
+        <h3>{title}</h3>
+        <h4>{company}</h4>
+        <time>{date}</time>
+      </div>
+    </div>
+    <div class="description">
+      {description}
+    </div>
+</div>
+
+<style>
+  .experience-item {
+    position: relative;
+    margin: 0 3rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    height: 100%;
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
+    border-color: var(--color-border);
+  }
+  .experience-item .details {
+    position: relative;
+    padding-bottom: 3rem;
+  }
+  .experience-item .details .sticky {
+    position: sticky;
+    top: 0;
+  }
+  .experience-item .details .bullet {
+    color: var(--color_dominante);
+    position: absolute;
+    left: -42px;
+    font-size: 2.5rem;
+  }
+  .experience-item .details h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffff;
+  }
+  .experience-item .details h4 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #c6ccd4;
+  }
+  .experience-item .details time {
+    font-size: 0.875rem;
+    color: #a7aab3;
+  }
+  .experience-item .description {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    color: var(--color_tints_9);
+  }
+  .experience-item .description svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke-width: 2;
+    stroke: currentColor;
+  }
+</style>
