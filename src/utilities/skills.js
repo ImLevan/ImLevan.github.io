@@ -30,11 +30,6 @@ export const frontendSkills = [
         description: "Framework web"
     },
     {
-        img: "/img/bootstrap.svg",
-        title: "Bootstrap",
-        description: "Framework para diseño web"
-    },
-    {
         img: "/img/figma.svg",
         title: "Figma",
         description: "Diseño colaborativo"
@@ -66,11 +61,6 @@ export const backendSkills = [
         img: "/img/python.svg",
         title: "Python",
         description: "Programación alto nivel"
-    },
-    {
-        img: "/img/django.svg",
-        title: "Django",
-        description: "Framework de Python"
     },
     {
         img: "/img/spring.png",

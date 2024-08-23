@@ -32,11 +32,52 @@
                             href="https://ar.linkedin.com/in/valentin-chianese"
                             target="_blank"><i class="fa fa-linkedin"></i></a
                         >
-                        <a
-                            href="https://www.instagram.com/chianesevalentin/"
-                            target="_blank"><i class="fa fa-instagram"></i></a
-                        >
                     </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form">
+                    <form id="form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="99fe2cf2-3dbb-4d7b-834a-319ccd148885" />
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input
+                                    name="name"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Nombre Completo"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input
+                                    name="email"
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="Dirección de Email"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input
+                                name="theme"
+                                type="text"
+                                class="form-control"
+                                placeholder="Asunto"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <textarea
+                                name="message"
+                                class="form-control"
+                                cols="30"
+                                rows="10"
+                                placeholder="Mensaje"></textarea>
+                        </div>
+                        <div><button type="submit">Enviar mensaje</button></div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -106,6 +147,40 @@
     }
 
     .contact .social a:hover i {
+        color: #ffffff;
+    }
+
+    .contact .form {
+        color: #666666;
+        font-weight: 300;
+    }
+
+    .contact .form input,
+    .contact .form textarea {
+        color: var(--background_color);
+        font-size: 16px;
+        font-weight: 500;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 1px solid var(--color_dominante);
+        border-radius: 0;
+        box-shadow: none;
+        resize: none;
+    }
+
+    .contact .form button[type="submit"] {
+        padding: 7px 30px 10px 30px;
+        color: var(--color_dominante);
+        letter-spacing: 1px;
+        transition: 0.3s;
+        cursor: pointer;
+        border-radius: 0;
+        border: 1px solid var(--color_dominante);
+        background: #ffffff;
+    }
+
+    .contact .form button[type="submit"]:hover {
+        background: var(--color_dominante);
         color: #ffffff;
     }
 </style>
