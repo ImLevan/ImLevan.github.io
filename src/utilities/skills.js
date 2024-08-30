@@ -114,5 +114,10 @@ export const otherSkills = [
         img: "/img/linux.svg",
         title: "Linux",
         description: "Sistema operativo"
+    },
+    {
+        img: "/img/docker.svg",
+        title: "Docker",
+        description: "Entorno de contenedores"
     }
 ];
