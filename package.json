@@ -10,7 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.11.0",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^4.16.7",
+    "astrocv": "file:",
     "nodemailer": "^6.9.14"
   }
 }
