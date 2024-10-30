@@ -97,6 +97,46 @@ export const allProjects = [
         ]
     },
     {
+        projectClass: "web-dev",
+        projectImage: "showflicks.png",
+        projectTitle: "Show Flicks",
+        projectDescription: "Comunicación con API de películas",
+        projectTechs: [
+            {
+                img: "ts.svg",
+                title: "TypeScript"
+            },
+            {
+                img: "react.svg",
+                title: "React"
+            },
+            {
+                img: "tailwind.svg",
+                title: "Tailwind CSS"
+            },
+            {
+                img: "figma.svg",
+                title: "Figma"
+            },
+            {
+                img: "git.svg",
+                title: "GIT"
+            }
+        ],
+        projectLinks: [
+            {
+                href: "https://github.com/ImLevan/show-flicks",
+                title: "Link al repo",
+                icon: "fab fa-github"
+            },
+            {
+                href: "https://show-flicks.netlify.app/",
+                title: "Sitio web",
+                icon: "fas fa-external-link-alt"
+            }
+        ]
+    },
+    {
         projectClass: "app-dev",
         projectImage: "inventoryManagement.jpg",
         projectTitle: "Inventory Management",
@@ -222,46 +262,6 @@ export const allProjects = [
             },
             {
                 href: "https://anime-project-frontend-m9d6.vercel.app/",
-                title: "Sitio web",
-                icon: "fas fa-external-link-alt"
-            }
-        ]
-    },
-    {
-        projectClass: "web-dev",
-        projectImage: "showflicks.png",
-        projectTitle: "Show Flicks",
-        projectDescription: "Comunicación con API de películas",
-        projectTechs: [
-            {
-                img: "ts.svg",
-                title: "TypeScript"
-            },
-            {
-                img: "react.svg",
-                title: "React"
-            },
-            {
-                img: "tailwind.svg",
-                title: "Tailwind CSS"
-            },
-            {
-                img: "figma.svg",
-                title: "Figma"
-            },
-            {
-                img: "git.svg",
-                title: "GIT"
-            }
-        ],
-        projectLinks: [
-            {
-                href: "https://github.com/ImLevan/show-flicks",
-                title: "Link al repo",
-                icon: "fab fa-github"
-            },
-            {
-                href: "https://show-flicks.netlify.app/",
                 title: "Sitio web",
                 icon: "fas fa-external-link-alt"
             }
