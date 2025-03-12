@@ -7,7 +7,7 @@ export const allProjects = [
         projectTechs: [
             {
                 img: "html.svg",
-                title: "HTML"
+                title: "HTML" 
             },
             {
                 img: "css.svg",
