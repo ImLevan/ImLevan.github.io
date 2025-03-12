@@ -1,6 +1,49 @@
 export const allProjects = [
     {
         projectClass: "web-dev",
+        projectImage: "bc-sublimaciones.png",
+        projectTitle: "BC Sublimaciones",
+        projectDescription: "Web emprendimiento de sublimaciones",
+        projectTechs: [
+            {
+                img: "html.svg",
+                title: "HTML"
+            },
+            {
+                img: "css.svg",
+                title: "CSS"
+            },
+            {
+                img: "js.svg",
+                title: "JavaScript"
+            },
+            {
+                img: "nextjs.svg",
+                title: "Next.js"
+            },
+            {
+                img: "psql.svg",
+                title: "PostgreSQL"
+            },
+            {
+                img: "figma.svg",
+                title: "Figma"
+            },
+            {
+                img: "git.svg",
+                title: "GIT"
+            }
+        ],
+        projectLinks: [
+            {
+                href: "https://bc-sublimaciones.vercel.app/",
+                title: "Sitio web",
+                icon: "fas fa-external-link-alt"
+            }
+        ]
+    },
+    {
+        projectClass: "web-dev",
         projectImage: "devtoolskit.png",
         projectTitle: "Devtoolskit",
         projectDescription: "Web Astro hecho para desarrolladores",
@@ -48,10 +91,6 @@ export const allProjects = [
             {
                 img: "html.svg",
                 title: "HTML"
-            },
-            {
-                img: "css.svg",
-                title: "CSS"
             },
             {
                 img: "js.svg",
@@ -210,63 +249,6 @@ export const allProjects = [
             }
         ]
     },
-    // {
-    //     projectClass: "web-dev",
-    //     projectImage: "proyectoAnimeTracker.png",
-    //     projectTitle: "Anime Tracker",
-    //     projectDescription: "App web de seguimiento de tus animes",
-    //     projectTechs: [
-    //         {
-    //             img: "html.svg",
-    //             title: "HTML"
-    //         },
-    //         {
-    //             img: "css.svg",
-    //             title: "CSS"
-    //         },
-    //         {
-    //             img: "js.svg",
-    //             title: "JavaScript"
-    //         },
-    //         {
-    //             img: "react.svg",
-    //             title: "React"
-    //         },
-    //         {
-    //             img: "psql.svg",
-    //             title: "PostgreSQL"
-    //         },
-    //         {
-    //             img: "java.svg",
-    //             title: "Java"
-    //         },
-    //         {
-    //             img: "spring.png",
-    //             title: "Spring Boot"
-    //         },
-    //         {
-    //             img: "docker.svg",
-    //             title: "Docker"
-    //         }
-    //     ],
-    //     projectLinks: [
-    //         {
-    //             href: "https://github.com/ImLevan/Anime-Project-Frontend",
-    //             title: "Link al repo frontend",
-    //             icon: "fab fa-github"
-    //         },
-    //         {
-    //             href: "https://docs.google.com/document/d/1xDw5uyNbqE8nXngSEBB_Nk6daVJ8FMuE7e1n8GSTn70/edit?usp=sharing",
-    //             title: "Presentación de la app",
-    //             icon: "fa-solid fa-circle-info"
-    //         },
-    //         {
-    //             href: "https://anime-project-frontend-m9d6.vercel.app/",
-    //             title: "Sitio web",
-    //             icon: "fas fa-external-link-alt"
-    //         }
-    //     ]
-    // },
     {
         projectClass: "web-dev",
         projectImage: "proyectoKarU.png",
@@ -432,43 +414,6 @@ export const allProjects = [
                 href: "https://github.com/ImLevan/Ahorcado",
                 title: "Link al repo",
                 icon: "fab fa-github"
-            }
-        ]
-    },
-    {
-        projectClass: "web-dev",
-        projectImage: "proyecto ecommerce.png",
-        projectTitle: "Ecommerce Estático",
-        projectDescription: "Diseño Web Ecommerce",
-        projectTechs: [
-            {
-                img: "html.svg",
-                title: "HTML"
-            },
-            {
-                img: "css.svg",
-                title: "CSS"
-            },
-            {
-                img: "js.svg",
-                title: "JavaScript"
-            }
-        ],
-        projectLinks: [
-            {
-                href: "https://github.com/ImLevan/project-ecommerce",
-                title: "Link al repo",
-                icon: "fab fa-github"
-            },
-            {
-                href: "https://shoesecommercestatic.netlify.app/",
-                title: "Sitio web",
-                icon: "fas fa-external-link-alt"
-            },
-            {
-                href: "https://docs.google.com/document/d/1XlpUvMKgA66SPRQVDle1bBvwL0878NE5-qdwX3Zbsrg/edit?usp=sharing",
-                title: "Documentación",
-                icon: "fas fa-book"
             }
         ]
     },
