@@ -20,7 +20,7 @@ const { title, company, description, link, date } = Astro.props
       </div>
     </div>
     <div class="description">
-      {description}
+      <Fragment set:html={description} />
     </div>
 </div>
 
