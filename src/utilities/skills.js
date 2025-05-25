@@ -25,6 +25,11 @@ export const frontendSkills = [
         description: "Framework de React"
     },
     {
+        img: "/img/angular.svg",
+        title: "Angular",
+        description: "Framework de JS"
+    },
+    {
         img: "/img/astro.svg",
         title: "Astro",
         description: "Framework web"
@@ -53,6 +58,11 @@ export const backendSkills = [
         description: "Lenguaje backend"
     },
     {
+        img: "/img/spring.png",
+        title: "Spring Boot",
+        description: "Herramienta de Spring"
+    },
+    {
         img: "/img/nodejs.svg",
         title: "Node.js",
         description: "Entorno de JS"
@@ -63,9 +73,9 @@ export const backendSkills = [
         description: "Programación alto nivel"
     },
     {
-        img: "/img/spring.png",
-        title: "Spring Boot",
-        description: "Herramienta de Spring"
+        img: "/img/django.svg",
+        title: "Django",
+        description: "Framework de Python"
     }
 ];
 
