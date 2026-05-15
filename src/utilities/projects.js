@@ -308,47 +308,6 @@ export const allProjects = [
         ]
     },
     {
-        projectClass: "web-dev",
-        projectImage: "proyecyoMaraton.png",
-        projectTitle: "Página Web de Maratón",
-        projectDescription: "Diseño web inscripción a maratón",
-        projectTechs: [
-            {
-                img: "html.svg",
-                title: "HTML"
-            },
-            {
-                img: "css.svg",
-                title: "CSS"
-            },
-            {
-                img: "js.svg",
-                title: "JavaScript"
-            },
-            {
-                img: "bootstrap.svg",
-                title: "Bootstrap"
-            }
-        ],
-        projectLinks: [
-            {
-                href: "https://github.com/ImLevan/Maqueta-Maraton",
-                title: "Link al repo",
-                icon: "fab fa-github"
-            },
-            {
-                href: "https://maratonmaqueta.netlify.app/",
-                title: "Sitio web",
-                icon: "fas fa-external-link-alt"
-            },
-            {
-                href: "https://docs.google.com/document/d/1-PALzokz7R_kUxCpsFUj7PZu1WffrhT6ZYkp7JRXV-4/edit?usp=sharing",
-                title: "Documentación",
-                icon: "fas fa-book"
-            }
-        ]
-    },
-    {
         projectClass: "app-dev",
         projectImage: "JuegoPy.png",
         projectTitle: "Adivina la canción",
@@ -366,29 +325,6 @@ export const allProjects = [
         projectLinks: [
             {
                 href: "https://github.com/ImLevan/Juego-PY",
-                title: "Link al repo",
-                icon: "fab fa-github"
-            }
-        ]
-    },
-    {
-        projectClass: "app-dev",
-        projectImage: "JuegoNinjas.png",
-        projectTitle: "Naruto Delivery Challenge",
-        projectDescription: "Juego en JAVA",
-        projectTechs: [
-            {
-                img: "java.svg",
-                title: "Java"
-            },
-            {
-                img: "git.svg",
-                title: "GIT"
-            }
-        ],
-        projectLinks: [
-            {
-                href: "https://github.com/ImLevan/Juego-Ninjas",
                 title: "Link al repo",
                 icon: "fab fa-github"
             }
@@ -414,38 +350,6 @@ export const allProjects = [
                 href: "https://github.com/ImLevan/Ahorcado",
                 title: "Link al repo",
                 icon: "fab fa-github"
-            }
-        ]
-    },
-    {
-        projectClass: "web-dev",
-        projectImage: "proyectoClima.png",
-        projectTitle: "Aplicación del Clima - OpenWeather API",
-        projectDescription: "Diseño Web API",
-        projectTechs: [
-            {
-                img: "html.svg",
-                title: "HTML"
-            },
-            {
-                img: "css.svg",
-                title: "CSS"
-            },
-            {
-                img: "js.svg",
-                title: "JavaScript"
-            }
-        ],
-        projectLinks: [
-            {
-                href: "https://github.com/ImLevan/Proyecto-Clima",
-                title: "Link al repo",
-                icon: "fab fa-github"
-            },
-            {
-                href: "https://weather-levanproject.netlify.app/",
-                title: "Sitio web",
-                icon: "fas fa-external-link-alt"
             }
         ]
     }
