@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^5.8.0",
+    "astro": "^6.4.6",
     "astrocv": "file:",
     "nodemailer": "^7.0.3"
   }
