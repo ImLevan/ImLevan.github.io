@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^6.0.5",
-    "astro": "^7.2.4",
+    "astro": "^7.3.1",
     "astrocv": "file:",
     "nodemailer": "^10.0.0"
   }
