@@ -14,5 +14,8 @@
     "astro": "^7.3.1",
     "astrocv": "file:",
     "nodemailer": "^10.0.0"
+  },
+  "devDependencies": {
+    "svgo": "^4.1.0"
   }
 }
