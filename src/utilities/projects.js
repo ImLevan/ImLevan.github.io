@@ -1,6 +1,55 @@
 export const allProjects = [
     {
         projectClass: "web-dev",
+        projectImage: "anime-schedule.png",
+        projectTitle: "Anime Schedule",
+        projectDescription: "App web de seguimiento de tus animes",
+        projectTechs: [
+            {
+                img: "ts.svg",
+                title: "TypeScript"
+            },
+            {
+                img: "nextjs.svg",
+                title: "Next.js"
+            },
+            {
+                img: "NestJs.svg",
+                title: "Nest.js"
+            },
+            {
+                img: "psql.svg",
+                title: "PostgreSQL"
+            },
+            {
+                img: "tailwind.svg",
+                title: "Tailwind CSS"
+            },
+            {
+                img: "redis.svg",
+                title: "Redis"
+            }
+        ],
+        projectLinks: [
+            {
+                href: "https://docs.google.com/document/d/1LK4fWZXyaAlsikpiK0iPU7LMUQW9cIsT/edit?usp=sharing&ouid=112006024511061175431&rtpof=true&sd=true",
+                title: "Presentación de la app",
+                icon: "fa-solid fa-circle-info"
+            },
+            {
+                href: "https://docs.google.com/document/d/1lCT8ogpVL7gCE9TLuw6nGkAz1qyaWy0R/edit?usp=sharing&ouid=112006024511061175431&rtpof=true&sd=true",
+                title: "Documentación técnica",
+                icon: "fas fa-book"
+            },
+            {
+                href: "https://www.anime-schedule.com.ar/",
+                title: "Sitio web",
+                icon: "fas fa-external-link-alt"
+            }
+        ]
+    },
+    {
+        projectClass: "web-dev",
         projectImage: "bc-sublimaciones.png",
         projectTitle: "BC Sublimaciones",
         projectDescription: "Web emprendimiento de sublimaciones",
@@ -80,59 +129,6 @@ export const allProjects = [
                 title: "Link al repo",
                 icon: "fab fa-github"
             },
-        ]
-    },
-    {
-        projectClass: "web-dev",
-        projectImage: "proyectoAnimeTracker.png",
-        projectTitle: "Anime Tracker Next.js",
-        projectDescription: "App web de seguimiento de tus animes",
-        projectTechs: [
-            {
-                img: "html.svg",
-                title: "HTML"
-            },
-            {
-                img: "js.svg",
-                title: "JavaScript"
-            },
-            {
-                img: "nextjs.svg",
-                title: "Next.js"
-            },
-            {
-                img: "psql.svg",
-                title: "PostgreSQL"
-            },
-            {
-                img: "tailwind.svg",
-                title: "Tailwind CSS"
-            },
-            {
-                img: "figma.svg",
-                title: "Figma"
-            },
-            {
-                img: "git.svg",
-                title: "GIT"
-            }
-        ],
-        projectLinks: [
-            {
-                href: "https://github.com/ImLevan/anime-project-next",
-                title: "Link al repo frontend",
-                icon: "fab fa-github"
-            },
-            {
-                href: "https://docs.google.com/document/d/1aUUJy6NjYuKca3AbUtZaoozQFUL7XIPiHXcXRgmO9K0/edit?usp=sharing",
-                title: "Presentación de la app",
-                icon: "fa-solid fa-circle-info"
-            },
-            {
-                href: "https://anime-project-next-jet.vercel.app/",
-                title: "Sitio web",
-                icon: "fas fa-external-link-alt"
-            }
         ]
     },
     {

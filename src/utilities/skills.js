@@ -68,6 +68,11 @@ export const backendSkills = [
         description: "Entorno de JS"
     },
     {
+        img: "/img/NestJs.svg",
+        title: "Nest.js",
+        description: "Framework de Node.js"
+    },
+    {
         img: "/img/python.svg",
         title: "Python",
         description: "Programación alto nivel"
@@ -83,6 +88,11 @@ export const otherSkills = [
     {
         img: "/img/mongo.svg",
         title: "MongoDB",
+        description: "Base de datos NoSQL"
+    },
+    {
+        img: "/img/redis.svg",
+        title: "Redis",
         description: "Base de datos NoSQL"
     },
     {
