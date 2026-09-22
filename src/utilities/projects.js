@@ -14,7 +14,7 @@ export const allProjects = [
                 title: "Next.js"
             },
             {
-                img: "NestJs.svg",
+                img: "NestJS.svg",
                 title: "Nest.js"
             },
             {

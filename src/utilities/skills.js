@@ -68,7 +68,7 @@ export const backendSkills = [
         description: "Entorno de JS"
     },
     {
-        img: "/img/NestJs.svg",
+        img: "/img/NestJS.svg",
         title: "Nest.js",
         description: "Framework de Node.js"
     },
