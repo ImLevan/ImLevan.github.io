@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^6.0.5",
-    "astro": "^7.3.2",
+    "@astrojs/react": "^6.0.6",
+    "astro": "^7.3.3",
     "astrocv": "file:",
-    "nodemailer": "^10.0.9"
+    "nodemailer": "^10.0.10"
   },
   "devDependencies": {
     "svgo": "^4.1.0"
