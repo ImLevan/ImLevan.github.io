@@ -1,41 +1,22 @@
-<div class="footer">
-    <div class="container">
-        <div class="copyright">
-            <p>VC <span id="year"></span></p>
-        </div>
-    </div>
-</div>
+---
+import { Heart } from "@lucide/astro";
+import { useTranslations, type Lang } from "../i18n/ui";
 
-<style>
-    .footer {
-        position: relative;
-        padding: 30px 0;
-        text-align: center;
-        background: var(--color_dominante);
-    }
+const lang = (Astro.currentLocale as Lang) ?? "es";
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
 
-    .footer .copyright p {
-        color: #fff;
-        font-size: 18px;
-        font-weight: 300;
-    }
-
-    .footer .copyright p:last-child {
-        margin: 0;
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const yearElement = document.getElementById('year');
-
-        // Obtener la fecha actual
-        const fechaActual = new Date();
-
-        // Obtener el año actual de la fecha
-        const añoActual = fechaActual.getFullYear();
-
-        // Actualizar el contenido del elemento del footer con el año actual
-        yearElement.textContent = añoActual.toString();
-    });
-</script>
+<footer class="border-t border-border py-10">
+	<div
+		class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 text-sm text-text-faint sm:flex-row"
+	>
+		<p class="font-display font-semibold text-text-muted">VC © {year}</p>
+		<p>{t("footer.rights")}</p>
+		<p class="inline-flex items-center gap-1">
+			{t("footer.built")}
+			<Heart class="size-3.5 fill-accent text-accent" />
+			Astro
+		</p>
+	</div>
+</footer>

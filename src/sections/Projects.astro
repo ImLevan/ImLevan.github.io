@@ -1,0 +1,120 @@
+---
+import SectionLabel from "../components/SectionLabel.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { allProjects } from "../data/projects";
+import { useTranslations, type Lang } from "../i18n/ui";
+
+const lang = (Astro.currentLocale as Lang) ?? "es";
+const t = useTranslations(lang);
+
+const filters = [
+	{ value: "*", label: t("projects.filterAll") },
+	{ value: "web-dev", label: t("projects.filterWeb") },
+	{ value: "app-dev", label: t("projects.filterApp") },
+];
+---
+
+<section id="projects" class="scroll-mt-24 py-24 sm:py-32">
+	<div class="mx-auto max-w-6xl px-6">
+		<SectionLabel index="04" label={t("projects.eyebrow")} />
+
+		<div
+			class="mt-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+		>
+			<div>
+				<h2
+					data-reveal
+					class="font-display text-3xl font-bold tracking-tight sm:text-4xl"
+				>
+					{t("projects.title")}
+				</h2>
+				<p data-reveal class="mt-3 max-w-xl text-text-muted">
+					{t("projects.desc")}
+				</p>
+			</div>
+
+			<div
+				data-reveal
+				id="project-filters"
+				class="flex shrink-0 flex-wrap gap-2"
+			>
+				{
+					filters.map((filter, i) => (
+						<button
+							type="button"
+							data-filter={filter.value}
+							class:list={[
+								"filter-pill rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
+								i === 0
+									? "border-transparent bg-accent text-accent-contrast"
+									: "border-border text-text-muted hover:text-text",
+							]}
+						>
+							{filter.label}
+						</button>
+					))
+				}
+			</div>
+		</div>
+
+		<div
+			data-reveal
+			class="mt-12 grid grid-flow-dense gap-5 sm:grid-cols-2 lg:grid-cols-3"
+		>
+			{
+				allProjects.map((project, index) => (
+					<ProjectCard project={project} featured={index === 0} />
+				))
+			}
+		</div>
+
+		<p
+			id="projects-empty"
+			hidden
+			class="mt-12 text-center text-text-faint"
+		>
+			{t("projects.empty")}
+		</p>
+	</div>
+</section>
+
+<script>
+	const pillBase = ["rounded-full", "border", "px-4", "py-1.5", "text-sm", "font-medium", "transition-colors"];
+	const pills = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
+	const cards = document.querySelectorAll<HTMLElement>("[data-project-card]");
+	const emptyMessage = document.getElementById("projects-empty");
+
+	pills.forEach((pill) => {
+		pill.addEventListener("click", () => {
+			// Estados de los pills
+			pills.forEach((p) => {
+				p.classList.remove(
+					"border-transparent",
+					"bg-accent",
+					"text-accent-contrast",
+				);
+				p.classList.add(...pillBase, "border-border", "text-text-muted");
+			});
+			pill.classList.remove("border-border", "text-text-muted");
+			pill.classList.add(
+				"border-transparent",
+				"bg-accent",
+				"text-accent-contrast",
+			);
+
+			// Filtrado
+			const filter = pill.dataset.filter ?? "*";
+			let visible = 0;
+
+			cards.forEach((card) => {
+				const show = filter === "*" || card.dataset.category === filter;
+				card.classList.toggle("hidden", !show);
+				if (show) visible++;
+			});
+
+			if (emptyMessage) {
+				emptyMessage.hidden = visible > 0;
+			}
+		});
+	});
+</script>

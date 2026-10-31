@@ -1,0 +1,111 @@
+---
+import { ExternalLink, Info, BookOpen } from "@lucide/astro";
+import Github from "./icons/Github.astro";
+import type { Project } from "../data/projects";
+import type { ProjectIcon } from "../data/projects";
+import { useTranslations, type Lang } from "../i18n/ui";
+
+interface Props {
+	project: Project;
+	featured?: boolean;
+}
+
+const { project, featured = false } = Astro.props;
+const lang = (Astro.currentLocale as Lang) ?? "es";
+const t = useTranslations(lang);
+
+const ICONS: Record<ProjectIcon, any> = {
+	github: Github,
+	"external-link": ExternalLink,
+	info: Info,
+	book: BookOpen,
+};
+
+const categoryLabel =
+	project.category === "web-dev"
+		? t("projects.filterWeb")
+		: t("projects.filterApp");
+---
+
+<article
+	data-project-card
+	data-category={project.category}
+	class:list={[
+		"group relative overflow-hidden rounded-2xl glass transition-colors duration-300 hover:border-accent/40",
+		featured && "lg:col-span-2 lg:row-span-2",
+	]}
+>
+	<div
+		class:list={[
+			"relative overflow-hidden",
+			featured ? "aspect-[16/9] lg:aspect-[16/10]" : "aspect-[16/9]",
+		]}
+	>
+		<img
+			src={`/img/portfolio/${project.image}`}
+			alt={project.title[lang]}
+			loading="lazy"
+			class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+		/>
+		<div
+			class="absolute inset-0 bg-gradient-to-t from-bg via-bg/30 to-transparent"
+			aria-hidden="true"
+		>
+		</div>
+		<span
+			class="absolute top-3 left-3 rounded-full bg-bg/70 px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase text-accent backdrop-blur-sm"
+		>
+			{categoryLabel}
+		</span>
+	</div>
+
+	<div class="relative -mt-14 p-5">
+		<h3
+			class:list={[
+				"font-display font-semibold",
+				featured ? "text-2xl sm:text-3xl" : "text-lg",
+			]}
+		>
+			{project.title[lang]}
+		</h3>
+		<p class:list={["mt-1.5 text-text-muted", featured ? "text-base" : "text-sm"]}>
+			{project.description[lang]}
+		</p>
+
+		<div class="mt-5 flex flex-wrap items-end justify-between gap-3">
+			<div class="flex flex-wrap gap-1.5">
+				{
+					project.techs.map((tech) => (
+						<img
+							src={`/img/${tech.img}`}
+							alt={tech.title}
+							title={tech.title}
+							loading="lazy"
+							class="size-7 rounded-lg border border-border bg-bg-subtle p-1 transition-transform duration-300 group-hover:border-accent/30"
+						/>
+					))
+				}
+			</div>
+
+			<div class="flex items-center gap-0.5">
+				{
+					project.links.map((link) => {
+						const Icon = ICONS[link.icon];
+						return (
+							<a
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								title={link.title[lang]}
+								aria-label={link.title[lang]}
+								class="flex size-9 items-center justify-center rounded-full text-text-muted transition-colors hover:bg-accent/15 hover:text-accent"
+							>
+								<Icon class="size-4" />
+							</a>
+						);
+					})
+				}
+			</div>
+		</div>
+	</div>
+</article>

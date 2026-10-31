@@ -1,199 +1,67 @@
 ---
+import SectionLabel from "../components/SectionLabel.astro";
 import {
-    frontendSkills,
-    backendSkills,
-    otherSkills,
-} from "../utilities/skills";
+	frontendSkills,
+	backendSkills,
+	otherSkills,
+	type Skill,
+} from "../data/skills";
+import { useTranslations, type Lang } from "../i18n/ui";
+
+const lang = (Astro.currentLocale as Lang) ?? "es";
+const t = useTranslations(lang);
+
+const groups: { title: string; skills: Skill[] }[] = [
+	{ title: t("skills.frontend"), skills: frontendSkills },
+	{ title: t("skills.backend"), skills: backendSkills },
+	{ title: t("skills.other"), skills: otherSkills },
+];
 ---
 
-<div class="skills-section-class" id="skills-section">
-    <div class="container">
-        <header class="section-header">
-            <h3 class="section-title">Habilidades - Tecnologías</h3>
-        </header>
-        <div class="skills-parent">
-            <div class="skills">
-                <h3>Habilidades Frontend</h3>
-                <div class="parent">
-                    {
-                        frontendSkills.map((skill) => (
-                            <div class="div">
-                                <img
-                                    src={`${skill.img}`}
-                                    alt="Descripción de la imagen"
-                                />
-                                <div class="text-info">
-                                    <h4 class="titulo">{skill.title}</h4>
-                                    <p class="expl">{skill.description}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-            <div class="skills">
-                <h3>Habilidades Backend</h3>
-                <div class="parent">
-                    {
-                        backendSkills.map((skill) => (
-                            <div class="div">
-                                <img
-                                    src={`${skill.img}`}
-                                    alt="Descripción de la imagen"
-                                />
-                                <div class="text-info">
-                                    <h4 class="titulo">{skill.title}</h4>
-                                    <p class="expl">{skill.description}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-            <div class="skills">
-                <h3>Otros</h3>
-                <div class="parent">
-                    {
-                        otherSkills.map((skill) => (
-                            <div class="div">
-                                <img
-                                    src={`${skill.img}`}
-                                    alt="Descripción de la imagen"
-                                />
-                                <div class="text-info">
-                                    <h4 class="titulo">{skill.title}</h4>
-                                    <p class="expl">{skill.description}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<section id="skills" class="scroll-mt-24 py-24 sm:py-32">
+	<div class="mx-auto max-w-6xl px-6">
+		<SectionLabel index="05" label={t("skills.eyebrow")} />
 
-<style>
-    .text-info h4,
-    .text-info p {
-        color: #fff;
-    }
+		<h2
+			data-reveal
+			class="mt-6 font-display text-3xl font-bold tracking-tight sm:text-4xl"
+		>
+			{t("skills.title")}
+		</h2>
 
-    .parent {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 9px;
-    }
-
-    @media screen and (max-width: 776px) {
-        .parent {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 9px;
-        }
-    }
-
-    @media screen and (max-width: 514px) {
-        .parent {
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(1, 1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 9px;
-        }
-
-        .parent .div img {
-            height: 45px;
-            width: 45px;
-        }
-
-        .parent .titulo {
-            font-size: 15px;
-        }
-
-        .parent .expl {
-            font-size: 12px;
-        }
-    }
-
-    .skills {
-        margin-bottom: 100px;
-    }
-
-    .div {
-        background-color: var(--color_tints_3);
-        display: flex;
-        transition: all 0.2s ease-in-out;
-    }
-
-    .div:hover {
-        transform: scale(1.05);
-        background-color: #490723;
-    }
-
-    .skills-section-class {
-        margin-top: 90px;
-        padding-top: 80px;
-    }
-
-    .skills-parent {
-        width: 100%;
-        margin: auto;
-        margin-top: 30px;
-    }
-
-    .skills-parent h2 {
-        margin-bottom: 20px;
-    }
-
-    .parent div {
-        border-radius: 8px;
-    }
-
-    div.div img {
-        padding-top: 7px;
-        padding-left: 15px;
-        width: 55px;
-        height: 55px;
-    }
-
-    .text-info {
-        padding-left: 15px;
-        padding-top: 10px;
-    }
-
-    .titulo {
-        margin: 0;
-        font-size: 20px;
-    }
-
-    .expl {
-        margin: 0;
-        font-size: 15px;
-        margin-bottom: 8px;
-    }
-
-    @media (max-width: 992px) {
-        div.skill-name img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .skill-name i {
-            font-size: 40px;
-        }
-    }
-
-    @media (max-width: 350px) {
-        div.skill-name img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .skill-name i {
-            font-size: 30px;
-        }
-    }
-</style>
+		<div class="mt-12 space-y-12">
+			{
+				groups.map((group) => (
+					<div data-reveal>
+						<h3 class="text-sm font-semibold tracking-[0.2em] text-text-faint uppercase">
+							{group.title}
+						</h3>
+						<div class="mt-5 flex flex-wrap gap-2.5">
+							{group.skills.map((skill) => (
+								<div
+									class="glass group flex items-center gap-2.5 rounded-xl py-2 pr-4 pl-3 transition-colors hover:border-accent/40"
+									title={skill.description[lang]}
+								>
+									<img
+										src={skill.img}
+										alt=""
+										loading="lazy"
+										class="size-7 object-contain transition-transform duration-300 group-hover:scale-110"
+									/>
+									<div class="leading-tight">
+										<span class="block text-sm font-medium">
+											{skill.title}
+										</span>
+										<span class="hidden text-xs text-text-faint sm:block">
+											{skill.description[lang]}
+										</span>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

@@ -20,6 +20,16 @@ export function getLangFromUrl(url: URL): Lang {
 }
 
 export const ui = {
+	/* ---------- Meta / SEO ---------- */
+	"meta.title": {
+		es: "Valentin Chianese — Desarrollador de Software",
+		en: "Valentin Chianese — Software Developer",
+	},
+	"meta.description": {
+		es: "Valentin Chianese, Técnico Universitario en Informática y Desarrollador de software con experiencia en la creación de aplicaciones web y de escritorio. Mí portafolio presenta una variedad de proyectos, desde aplicaciones simples hasta proyectos complejos.",
+		en: "Valentin Chianese, IT University Technician and Software Developer with experience building web and desktop applications. My portfolio showcases a variety of projects, from simple apps to complex systems.",
+	},
+
 	/* ---------- Nav ---------- */
 	"nav.about": { es: "Sobre mí", en: "About" },
 	"nav.experience": { es: "Experiencia", en: "Experience" },
@@ -39,7 +49,10 @@ export const ui = {
 
 	/* ---------- Hero ---------- */
 	"hero.greeting": { es: "Soy", en: "I'm" },
-	"hero.scrollHint": { es: "Seguí scrolleando", en: "Keep scrolling" },
+	"hero.badge": {
+		es: "Desarrollador de software · Buenos Aires",
+		en: "Software developer · Buenos Aires",
+	},
 
 	/* ---------- About ---------- */
 	"about.eyebrow": { es: "Sobre mí", en: "About me" },

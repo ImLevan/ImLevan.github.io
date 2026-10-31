@@ -1,0 +1,181 @@
+---
+import { Menu, X, Mail } from "@lucide/astro";
+import Github from "./icons/Github.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { useTranslations, type Lang } from "../i18n/ui";
+
+const lang = (Astro.currentLocale as Lang) ?? "es";
+const t = useTranslations(lang);
+
+const links = [
+	{ href: "#about", label: t("nav.about") },
+	{ href: "#experience", label: t("nav.experience") },
+	{ href: "#projects", label: t("nav.projects") },
+	{ href: "#skills", label: t("nav.skills") },
+	{ href: "#contact", label: t("nav.contact") },
+];
+
+const socials = [
+	{ href: "mailto:chianesevalentin@gmail.com", label: t("social.mail"), Icon: Mail },
+	{ href: "https://ar.linkedin.com/in/valentin-chianese", label: t("social.linkedin"), Icon: Linkedin },
+	{ href: "https://github.com/ImLevan", label: t("social.github"), Icon: Github },
+];
+---
+
+<header id="site-header" class="fixed inset-x-0 top-0 z-50">
+	<div
+		class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+	>
+		<a href="#top" class="flex items-center gap-2.5">
+			<img
+				src="/img/top-header/logoVC.jpg"
+				alt="Valentin Chianese"
+				class="size-9 rounded-full object-cover ring-1 ring-border"
+				width="36"
+				height="36"
+			/>
+			<span class="font-display text-sm font-bold tracking-wide">VC</span>
+		</a>
+
+		<nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+			<ul class="glass flex items-center gap-1 rounded-full px-2 py-1.5">
+				{
+					links.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								class="nav-link rounded-full px-3 py-1.5 text-sm text-text-muted transition-colors hover:text-text"
+							>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+
+		<div class="flex items-center gap-1">
+			<div class="mr-1 hidden items-center gap-0.5 lg:flex">
+				{
+					socials.map(({ href, label, Icon }) => (
+						<a
+							href={href}
+							aria-label={label}
+							title={label}
+							target={href.startsWith("http") ? "_blank" : undefined}
+							rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+							class="flex size-9 items-center justify-center rounded-full text-text-muted transition-colors hover:bg-surface hover:text-accent"
+						>
+							<Icon class="size-4" />
+						</a>
+					))
+				}
+			</div>
+
+			<LanguageSwitcher />
+			<ThemeToggle />
+
+			<button
+				id="mobile-nav-toggle"
+				type="button"
+				aria-label={t("nav.openMenu")}
+				aria-expanded="false"
+				aria-controls="mobile-nav"
+				class="ml-1 flex size-9 items-center justify-center rounded-full text-text transition-colors hover:bg-surface md:hidden"
+			>
+				<Menu class="size-5 menu-icon-open" />
+				<X class="size-5 hidden menu-icon-close" />
+			</button>
+		</div>
+	</div>
+
+	<!-- Panel móvil -->
+	<nav
+		id="mobile-nav"
+		class="glass mx-4 hidden rounded-2xl p-3 md:hidden"
+		aria-label="Mobile"
+	>
+		<ul class="flex flex-col">
+			{
+				links.map((link) => (
+					<li>
+						<a
+							href={link.href}
+							class="block rounded-xl px-4 py-2.5 text-text-muted transition-colors hover:bg-surface hover:text-text"
+						>
+							{link.label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+		<div class="mt-2 flex items-center justify-between border-t border-border px-2 pt-3">
+			<div class="flex items-center gap-0.5">
+				{
+					socials.map(({ href, label, Icon }) => (
+						<a
+							href={href}
+							aria-label={label}
+							target={href.startsWith("http") ? "_blank" : undefined}
+							rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+							class="flex size-9 items-center justify-center rounded-full text-text-muted transition-colors hover:text-accent"
+						>
+							<Icon class="size-4" />
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</nav>
+</header>
+
+<script>
+	const toggle = document.getElementById("mobile-nav-toggle");
+	const panel = document.getElementById("mobile-nav");
+
+	toggle?.addEventListener("click", () => {
+		const isOpen = panel?.classList.toggle("hidden") === false;
+		toggle.setAttribute("aria-expanded", String(isOpen));
+		toggle
+			.querySelector(".menu-icon-open")
+			?.classList.toggle("hidden", isOpen);
+		toggle
+			.querySelector(".menu-icon-close")
+			?.classList.toggle("hidden", !isOpen);
+	});
+
+	// Cerrar el menú al tocar un link
+	panel?.querySelectorAll("a").forEach((link) => {
+		link.addEventListener("click", () => {
+			panel.classList.add("hidden");
+			toggle?.setAttribute("aria-expanded", "false");
+			toggle?.querySelector(".menu-icon-open")?.classList.remove("hidden");
+			toggle?.querySelector(".menu-icon-close")?.classList.add("hidden");
+		});
+	});
+
+	// Sombra/glass del header al scrollear
+	const header = document.getElementById("site-header");
+	const onScroll = () => {
+		header?.classList.toggle(
+			"backdrop-blur-xl",
+			window.scrollY > 24,
+		);
+		header?.classList.toggle(
+			"border-b",
+			window.scrollY > 24,
+		);
+		header?.classList.toggle(
+			"border-border",
+			window.scrollY > 24,
+		);
+		header?.classList.toggle(
+			"bg-bg/70",
+			window.scrollY > 24,
+		);
+	};
+	window.addEventListener("scroll", onScroll, { passive: true });
+	onScroll();
+</script>

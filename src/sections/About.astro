@@ -1,105 +1,111 @@
-<div class="about" id="about">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 col-lg-4">
-                <img class="img-fluid" src="/img/about/foto1.jpeg" />
-            </div>
+---
+import { Monitor, Code, Globe, Download, Award, MapPin } from "@lucide/astro";
+import SectionLabel from "../components/SectionLabel.astro";
+import { useTranslations, type Lang } from "../i18n/ui";
 
-            <div class="col-md-16 col-lg-8">
-                <header class="section-header">
-                    <h2>Sobre Mí</h2>
-                </header>
-                <h3><strong>Nombre:</strong> Valentin Chianese</h3>
-                <h3>
-                    <strong>Profesión:</strong> Técnico Universitario en Informática
-                    - Desarrollador de software
-                </h3>
-                <p>
-                    Mi nombre es Valentín Chianese y soy Técnico universitario
-                    en informática y desarrollador de software de Buenos Aires,
-                    Argentina. Empecé a programar con Python, pero rápidamente
-                    me enamoré de la programación orientada a objetos y Java. He
-                    desarrollado y ayudado a desarrollar varios proyectos con
-                    este paradigma, en los que he podido aplicar mis
-                    conocimientos de algoritmos, estructuras de datos y diseño
-                    de software.
-                </p>
-                <p>
-                    En mis estudios, pude comprender y vivir desde dentro lo que
-                    es el análisis, el diseño y la gestión de proyectos
-                    informáticos, en particular, en un proyecto académico
-                    "KarU", trabajando sobre el marco de trabajo para escalar las metodologías ágiles, SAFe, tuve la
-                    oportunidad de participar en uno de los equipos siendo desarrollador
-                    frontend.
-                </p>
-                <p>
-                    Soy una persona creativa y autodidacta, creo que los
-                    desarrolladores de software tenemos un papel importante que
-                    desempeñar en la creación de un futuro mejor para todos.
-                </p>
-                <a href="/cv/CV Valentin Chianese.pdf" target="_blank" id="downloadBtn">Descargar CV</a>
-                <a
-                    href="https://github.com/ImLevan/Certificados"
-                    target="_blank">Certificados</a
-                >
-            </div>
-        </div>
-    </div>
-</div>
+const lang = (Astro.currentLocale as Lang) ?? "es";
+const t = useTranslations(lang);
 
-<style>
-    @media screen and (max-width: 992px) {
-        #about .row {
-            display: block;
-        }
-    }
+const services = [
+	{ Icon: Monitor, title: t("services.desktop.title"), desc: t("services.desktop.desc") },
+	{ Icon: Code, title: t("services.web.title"), desc: t("services.web.desc") },
+	{ Icon: Globe, title: t("services.static.title"), desc: t("services.static.desc") },
+];
+---
 
-    .about {
-        padding: 80px 0 15px 0;
-        position: relative;
-        margin-bottom: 100px;
-    }
+<section id="about" class="scroll-mt-24 py-24 sm:py-32">
+	<div class="mx-auto max-w-6xl px-6">
+		<SectionLabel index="01" label={t("about.eyebrow")} />
 
-    .about .row {
-        margin-bottom: 30px;
-    }
+		<div class="mt-8 grid items-start gap-12 lg:grid-cols-5">
+			<div data-reveal class="lg:col-span-2">
+				<div class="relative">
+					<div
+						class="absolute -inset-4 rounded-3xl bg-accent/15 blur-3xl"
+						aria-hidden="true"
+					>
+					</div>
+					<img
+						src="/img/about/foto1.jpeg"
+						alt="Valentin Chianese"
+						class="relative w-full rounded-3xl object-cover ring-1 ring-border"
+						loading="lazy"
+					/>
+				</div>
+				<p
+					class="mt-5 flex items-center justify-center gap-2 text-sm text-text-muted"
+				>
+					<MapPin class="size-4 text-accent" />
+					{t("about.location")}
+				</p>
+			</div>
 
-    .about img {
-        border-radius: 37px;
-        width: 100%;
-    }
+			<div class="lg:col-span-3">
+				<h2
+					data-reveal
+					class="font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl"
+				>
+					{t("about.title")}
+				</h2>
+				<p data-reveal class="mt-3 text-sm font-medium text-accent">
+					{t("about.role")}
+				</p>
 
-    .about h3 {
-        font-size: 20px;
-        font-weight: 400;
-        margin-bottom: 5px;
-    }
+				<div data-reveal class="mt-8 space-y-5">
+					<p class="leading-relaxed text-text-muted">{t("about.p1")}</p>
+					<p class="leading-relaxed text-text-muted">{t("about.p2")}</p>
+					<p class="leading-relaxed text-text-muted">{t("about.p3")}</p>
+				</div>
 
-    .about h4 {
-        font-size: 16px;
-        font-weight: 400;
-    }
+				<div data-reveal class="mt-8 flex flex-wrap gap-3">
+					<a
+						href="/cv/CV Valentin Chianese.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-contrast transition-transform hover:bg-accent-strong hover:-translate-y-0.5"
+					>
+						<Download class="size-4" />
+						{t("about.downloadCv")}
+					</a>
+					<a
+						href="https://github.com/ImLevan/Certificados"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent/50 hover:text-accent"
+					>
+						<Award class="size-4" />
+						{t("about.certificates")}
+					</a>
+				</div>
+			</div>
+		</div>
 
-    .about p {
-        font-size: 19px;
-        font-weight: 300;
-    }
+		<!-- Servicios integrados -->
+		<div class="mt-24">
+			<SectionLabel index="02" label={t("services.eyebrow")} />
+			<h2
+				data-reveal
+				class="mt-6 font-display text-3xl font-bold tracking-tight sm:text-4xl"
+			>
+				{t("services.title")}
+			</h2>
 
-    .about a,
-    .experience a {
-        display: inline-block;
-        padding: 6px 20px;
-        color: var(--color_tints_9);
-        font-size: 16px;
-        font-weight: 400;
-        letter-spacing: 1px;
-        border: 1px solid var(--color_dominante);
-        margin-top: 20px;
-    }
-
-    .about a:hover,
-    .experience a:hover {
-        color: #ffffff;
-        background: var(--color_dominante);
-    }
-</style>
+			<div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				{
+					services.map(({ Icon, title, desc }) => (
+						<div
+							data-reveal
+							class="glass group rounded-2xl p-6 transition-colors hover:border-accent/40"
+						>
+							<div class="flex size-11 items-center justify-center rounded-xl bg-accent/15 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-contrast">
+								<Icon class="size-5" />
+							</div>
+							<h3 class="mt-4 font-display text-lg font-semibold">{title}</h3>
+							<p class="mt-2 text-sm leading-relaxed text-text-muted">{desc}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>

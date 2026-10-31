@@ -1,0 +1,32 @@
+---
+import { useTranslations, type Lang } from "../i18n/ui";
+
+const lang = (Astro.currentLocale as Lang) ?? "es";
+const t = useTranslations(lang);
+const isEn = lang === "en";
+
+const baseClass =
+	"rounded px-1.5 py-0.5 text-xs font-semibold tracking-wider transition-colors";
+const activeClass = "bg-accent/15 text-accent";
+const idleClass = "text-text-faint hover:text-text";
+---
+
+<div
+	class="flex items-center rounded-full border border-border bg-surface/50 p-0.5"
+	aria-label={t("a11y.langSwitch")}
+>
+	<a
+		href="/"
+		lang="es"
+		hreflang="es"
+		aria-current={!isEn ? "true" : undefined}
+		class:list={[baseClass, isEn ? idleClass : activeClass]}>ES</a
+	>
+	<a
+		href="/en"
+		lang="en"
+		hreflang="en"
+		aria-current={isEn ? "true" : undefined}
+		class:list={[baseClass, isEn ? activeClass : idleClass]}>EN</a
+	>
+</div>

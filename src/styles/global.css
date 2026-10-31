@@ -2,6 +2,9 @@
 @import "@fontsource-variable/syne";
 @import "@fontsource-variable/inter";
 
+/* Class-based light theme: <html class="light"> */
+@custom-variant light (&:where(.light, .light *));
+
 /* ============================================================
    DESIGN TOKENS — "Oscuro premium vino"
    Semantic tokens switch between dark (default) and light.
