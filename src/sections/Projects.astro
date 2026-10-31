@@ -59,7 +59,6 @@ const filters = [
 
 		<div
 			data-reveal
-			data-project-grid
 			class="mt-12 grid grid-flow-dense gap-5 sm:grid-cols-2 lg:grid-cols-3"
 		>
 			{
@@ -94,11 +93,6 @@ const filters = [
 		document.querySelectorAll<HTMLElement>("[data-project-card]"),
 	);
 	const emptyMessage = document.getElementById("projects-empty");
-	const grid = document.querySelector<HTMLElement>("[data-project-grid]");
-
-	// Lenis cachea el límite de scroll; hay que avisarle cuando el layout cambia
-	const refreshScroll = () =>
-		(window as { __refreshScroll?: () => void }).__refreshScroll?.();
 
 	// El mensaje vacío solo se muestra si no queda ninguna card visible
 	function updateEmptyState() {
@@ -137,13 +131,11 @@ const filters = [
 					);
 				});
 				updateEmptyState();
-				refreshScroll();
 				return;
 			}
 
 			// Estado previo para el reflow animado
 			const state = Flip.getState(cards);
-			const startHeight = grid?.offsetHeight;
 
 			// Aplicar filtrado
 			cards.forEach((card) => {
@@ -154,13 +146,8 @@ const filters = [
 			});
 			updateEmptyState();
 
-			// Medir la altura final ANTES de Flip.from: al lanzar la animación,
-			// Flip restaura momentáneamente las cards salientes para el fade-out
-			// y offsetHeight volvería a medir con todas las cards visibles.
-			const endHeight = grid?.offsetHeight;
-
-			// Animar el reacomodo sin sacar las cards del flujo (sin absolute):
-			// así la grid no colapsa y la sección siguiente no se superpone.
+			// Animar el reacomodo de las cards visibles. El contenedor pasa a su
+			// altura final al instante y el scroll nativo se ajusta solo.
 			Flip.from(state, {
 				duration: 0.55,
 				ease: "power2.inOut",
@@ -174,38 +161,6 @@ const filters = [
 				onLeave: (elements) =>
 					gsap.to(elements, { opacity: 0, scale: 0.94, duration: 0.3 }),
 			});
-
-			// Transicionar la altura del contenedor para que la sección
-			// siguiente baje/suba de forma fluida en vez de saltar.
-			if (
-				grid &&
-				typeof startHeight === "number" &&
-				typeof endHeight === "number"
-			) {
-				gsap.fromTo(
-					grid,
-					{ height: startHeight },
-					{
-						height: endHeight,
-						duration: 0.55,
-						ease: "power2.inOut",
-						// Mata cualquier tween previo del mismo contenedor para
-						// que un doble click no deje una altura vieja pegada.
-						override: true,
-						onComplete: () => {
-							gsap.set(grid, { clearProps: "height" });
-							// Doble rAF: el primer frame aplica el layout sin el
-							// height inline; el segundo ya mide el doc final real.
-							requestAnimationFrame(() =>
-								requestAnimationFrame(refreshScroll),
-							);
-						},
-					},
-				);
-			}
-
-			// Ajustar también al iniciar, cuando el layout ya cambió al estado final
-			refreshScroll();
 		});
 	});
 </script>

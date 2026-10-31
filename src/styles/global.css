@@ -156,21 +156,8 @@ html.light .noise-overlay {
 }
 
 /* ============================================================
-   LENIS
+   CUSTOM CURSOR eliminado / scroll nativo del navegador
    ============================================================ */
-
-html.lenis,
-html.lenis body {
-    height: auto;
-}
-
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-}
-
-.lenis.lenis-stopped {
-    overflow: hidden;
-}
 
 /* ============================================================
    REDUCED MOTION
