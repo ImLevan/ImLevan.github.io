@@ -96,6 +96,10 @@ const filters = [
 	const emptyMessage = document.getElementById("projects-empty");
 	const grid = document.querySelector<HTMLElement>("[data-project-grid]");
 
+	// Lenis cachea el límite de scroll; hay que avisarle cuando el layout cambia
+	const refreshScroll = () =>
+		(window as { __refreshScroll?: () => void }).__refreshScroll?.();
+
 	// El mensaje vacío solo se muestra si no queda ninguna card visible
 	function updateEmptyState() {
 		if (!emptyMessage) return;
@@ -133,6 +137,7 @@ const filters = [
 					);
 				});
 				updateEmptyState();
+				refreshScroll();
 				return;
 			}
 
@@ -175,10 +180,20 @@ const filters = [
 						height: grid.offsetHeight,
 						duration: 0.55,
 						ease: "power2.inOut",
-						onComplete: () => gsap.set(grid, { clearProps: "height" }),
+						// Mata cualquier tween previo del mismo contenedor para
+						// que un doble click no deje una altura vieja pegada.
+						override: true,
+						onComplete: () => {
+							gsap.set(grid, { clearProps: "height" });
+							// Ya con la altura real: recalcular el límite de Lenis
+							refreshScroll();
+						},
 					},
 				);
 			}
+
+			// Ajustar también al iniciar, cuando el layout ya cambió al estado final
+			refreshScroll();
 		});
 	});
 </script>

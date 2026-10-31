@@ -10,6 +10,14 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger, Flip);
 
+declare global {
+	interface Window {
+		/** Recalcula el límite de scroll de Lenis tras cambios de layout
+		 *  (ej. filtrado de proyectos). Definido solo con smooth scroll activo. */
+		__refreshScroll?: () => void;
+	}
+}
+
 const prefersReducedMotion = window.matchMedia(
 	"(prefers-reduced-motion: reduce)",
 ).matches;
@@ -25,6 +33,10 @@ function initSmoothScroll() {
 	lenis.on("scroll", ScrollTrigger.update);
 	gsap.ticker.add((time) => lenis.raf(time * 1000));
 	gsap.ticker.lagSmoothing(0);
+
+	// Lenis cachea el límite de scroll: hay que avisarle cuando el layout
+	// cambia de tamaño (filtrado de proyectos, imágenes cargadas, etc.)
+	window.__refreshScroll = () => lenis.resize();
 
 	// Anclas: scroll suave vía Lenis respetando el offset del header
 	document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
