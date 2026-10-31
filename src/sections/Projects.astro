@@ -59,6 +59,7 @@ const filters = [
 
 		<div
 			data-reveal
+			data-project-grid
 			class="mt-12 grid grid-flow-dense gap-5 sm:grid-cols-2 lg:grid-cols-3"
 		>
 			{
@@ -93,6 +94,7 @@ const filters = [
 		document.querySelectorAll<HTMLElement>("[data-project-card]"),
 	);
 	const emptyMessage = document.getElementById("projects-empty");
+	const grid = document.querySelector<HTMLElement>("[data-project-grid]");
 
 	// El mensaje vacío solo se muestra si no queda ninguna card visible
 	function updateEmptyState() {
@@ -136,6 +138,7 @@ const filters = [
 
 			// Estado previo para el reflow animado
 			const state = Flip.getState(cards);
+			const startHeight = grid?.offsetHeight;
 
 			// Aplicar filtrado
 			cards.forEach((card) => {
@@ -146,11 +149,11 @@ const filters = [
 			});
 			updateEmptyState();
 
-			// Animar el reacomodo
+			// Animar el reacomodo sin sacar las cards del flujo (sin absolute):
+			// así la grid no colapsa y la sección siguiente no se superpone.
 			Flip.from(state, {
 				duration: 0.55,
 				ease: "power2.inOut",
-				absolute: true,
 				scale: true,
 				onEnter: (elements) =>
 					gsap.fromTo(
@@ -161,6 +164,21 @@ const filters = [
 				onLeave: (elements) =>
 					gsap.to(elements, { opacity: 0, scale: 0.94, duration: 0.3 }),
 			});
+
+			// Transicionar la altura del contenedor para que la sección
+			// siguiente baje/suba de forma fluida en vez de saltar.
+			if (grid && typeof startHeight === "number") {
+				gsap.fromTo(
+					grid,
+					{ height: startHeight },
+					{
+						height: grid.offsetHeight,
+						duration: 0.55,
+						ease: "power2.inOut",
+						onComplete: () => gsap.set(grid, { clearProps: "height" }),
+					},
+				);
+			}
 		});
 	});
 </script>
