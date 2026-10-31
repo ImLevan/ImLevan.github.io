@@ -94,6 +94,15 @@ const filters = [
 	);
 	const emptyMessage = document.getElementById("projects-empty");
 
+	// El mensaje vacío solo se muestra si no queda ninguna card visible
+	function updateEmptyState() {
+		if (!emptyMessage) return;
+		const anyVisible = cards.some(
+			(card) => !card.classList.contains("hidden"),
+		);
+		emptyMessage.hidden = anyVisible;
+	}
+
 	pills.forEach((pill) => {
 		pill.addEventListener("click", () => {
 			// Estados de los pills
@@ -121,11 +130,7 @@ const filters = [
 						filter !== "*" && card.dataset.category !== filter,
 					);
 				});
-				if (emptyMessage) {
-					emptyMessage.hidden = !cards.some(
-						(card) => !card.classList.contains("hidden"),
-					);
-				}
+				updateEmptyState();
 				return;
 			}
 
@@ -139,11 +144,7 @@ const filters = [
 					filter !== "*" && card.dataset.category !== filter,
 				);
 			});
-			if (emptyMessage) {
-				emptyMessage.hidden = !cards.some(
-					(card) => !card.classList.contains("hidden"),
-				);
-			}
+			updateEmptyState();
 
 			// Animar el reacomodo
 			Flip.from(state, {

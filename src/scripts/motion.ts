@@ -1,5 +1,5 @@
 /* ============================================================
-   Motion — Lenis smooth scroll + GSAP reveals + cursor magnético
+   Motion — Lenis smooth scroll + GSAP reveals + botones magnéticos
    Todo se desactiva con prefers-reduced-motion.
    ============================================================ */
 
@@ -90,49 +90,6 @@ function initReveals() {
 	}
 }
 
-/* ---------- Cursor personalizado ---------- */
-
-function initCursor() {
-	if (!finePointer) return;
-
-	const dot = document.createElement("div");
-	const ring = document.createElement("div");
-	dot.className = "cursor-dot";
-	ring.className = "cursor-ring";
-	dot.setAttribute("aria-hidden", "true");
-	ring.setAttribute("aria-hidden", "true");
-	document.body.append(ring, dot);
-
-	const dotX = gsap.quickTo(dot, "x", { duration: 0.12, ease: "power3" });
-	const dotY = gsap.quickTo(dot, "y", { duration: 0.12, ease: "power3" });
-	const ringX = gsap.quickTo(ring, "x", { duration: 0.35, ease: "power3" });
-	const ringY = gsap.quickTo(ring, "y", { duration: 0.35, ease: "power3" });
-
-	window.addEventListener(
-		"mousemove",
-		(event) => {
-			dot.classList.add("is-visible");
-			ring.classList.add("is-visible");
-			dotX(event.clientX);
-			dotY(event.clientY);
-			ringX(event.clientX);
-			ringY(event.clientY);
-		},
-		{ passive: true },
-	);
-
-	document.querySelectorAll("a, button").forEach((el) => {
-		el.addEventListener("mouseenter", () => {
-			dot.classList.add("is-active");
-			ring.classList.add("is-active");
-		});
-		el.addEventListener("mouseleave", () => {
-			dot.classList.remove("is-active");
-			ring.classList.remove("is-active");
-		});
-	});
-}
-
 /* ---------- Botones magnéticos ---------- */
 
 function initMagnetic() {
@@ -163,7 +120,6 @@ function init() {
 
 	gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
 		initReveals();
-		initCursor();
 		initMagnetic();
 	});
 }
