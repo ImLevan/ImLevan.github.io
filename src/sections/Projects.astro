@@ -79,9 +79,19 @@ const filters = [
 </section>
 
 <script>
-	const pillBase = ["rounded-full", "border", "px-4", "py-1.5", "text-sm", "font-medium", "transition-colors"];
+	import { gsap } from "gsap";
+	import { Flip } from "gsap/Flip";
+
+	gsap.registerPlugin(Flip);
+
+	const prefersReducedMotion = window.matchMedia(
+		"(prefers-reduced-motion: reduce)",
+	).matches;
+
 	const pills = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
-	const cards = document.querySelectorAll<HTMLElement>("[data-project-card]");
+	const cards = Array.from(
+		document.querySelectorAll<HTMLElement>("[data-project-card]"),
+	);
 	const emptyMessage = document.getElementById("projects-empty");
 
 	pills.forEach((pill) => {
@@ -93,7 +103,7 @@ const filters = [
 					"bg-accent",
 					"text-accent-contrast",
 				);
-				p.classList.add(...pillBase, "border-border", "text-text-muted");
+				p.classList.add("border-border", "text-text-muted");
 			});
 			pill.classList.remove("border-border", "text-text-muted");
 			pill.classList.add(
@@ -102,19 +112,54 @@ const filters = [
 				"text-accent-contrast",
 			);
 
-			// Filtrado
 			const filter = pill.dataset.filter ?? "*";
-			let visible = 0;
 
-			cards.forEach((card) => {
-				const show = filter === "*" || card.dataset.category === filter;
-				card.classList.toggle("hidden", !show);
-				if (show) visible++;
-			});
-
-			if (emptyMessage) {
-				emptyMessage.hidden = visible > 0;
+			if (prefersReducedMotion) {
+				cards.forEach((card) => {
+					card.classList.toggle(
+						"hidden",
+						filter !== "*" && card.dataset.category !== filter,
+					);
+				});
+				if (emptyMessage) {
+					emptyMessage.hidden = !cards.some(
+						(card) => !card.classList.contains("hidden"),
+					);
+				}
+				return;
 			}
+
+			// Estado previo para el reflow animado
+			const state = Flip.getState(cards);
+
+			// Aplicar filtrado
+			cards.forEach((card) => {
+				card.classList.toggle(
+					"hidden",
+					filter !== "*" && card.dataset.category !== filter,
+				);
+			});
+			if (emptyMessage) {
+				emptyMessage.hidden = !cards.some(
+					(card) => !card.classList.contains("hidden"),
+				);
+			}
+
+			// Animar el reacomodo
+			Flip.from(state, {
+				duration: 0.55,
+				ease: "power2.inOut",
+				absolute: true,
+				scale: true,
+				onEnter: (elements) =>
+					gsap.fromTo(
+						elements,
+						{ opacity: 0, scale: 0.94 },
+						{ opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" },
+					),
+				onLeave: (elements) =>
+					gsap.to(elements, { opacity: 0, scale: 0.94, duration: 0.3 }),
+			});
 		});
 	});
 </script>
