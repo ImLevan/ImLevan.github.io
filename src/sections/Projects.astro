@@ -46,7 +46,7 @@ const filters = [
 							class:list={[
 								"filter-pill rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
 								i === 0
-									? "border-transparent bg-accent text-accent-contrast"
+									? "border-transparent bg-accent-strong text-accent-contrast"
 									: "border-border text-text-muted hover:text-text",
 							]}
 						>
@@ -100,7 +100,7 @@ const filters = [
 			pills.forEach((p) => {
 				p.classList.remove(
 					"border-transparent",
-					"bg-accent",
+					"bg-accent-strong",
 					"text-accent-contrast",
 				);
 				p.classList.add("border-border", "text-text-muted");
@@ -108,7 +108,7 @@ const filters = [
 			pill.classList.remove("border-border", "text-text-muted");
 			pill.classList.add(
 				"border-transparent",
-				"bg-accent",
+				"bg-accent-strong",
 				"text-accent-contrast",
 			);
 

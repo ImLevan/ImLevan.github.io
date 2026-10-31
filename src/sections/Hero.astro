@@ -31,18 +31,18 @@ const socials = [
 
 		<h1
 			data-reveal
-			class="font-display text-5xl leading-[1.05] font-bold tracking-tight text-balance sm:text-7xl lg:text-8xl"
+			class="font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.05] font-bold tracking-tight text-balance"
 		>
 			{t("hero.greeting")} <span class="text-accent">Valentin</span> Chianese
 		</h1>
 
 		<div
 			data-reveal
-			class="mt-6 h-10 overflow-hidden sm:h-12"
+			class="mt-6 min-h-8 sm:min-h-12"
 			aria-live="polite"
 		>
 			<h2
-				class="font-display text-2xl font-medium text-text-muted sm:text-3xl"
+				class="font-display text-lg font-medium whitespace-nowrap text-text-muted sm:text-3xl"
 			>
 				<span
 					id="typing-span"
@@ -57,7 +57,7 @@ const socials = [
 			<a
 				href="#projects"
 				data-magnetic
-				class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-contrast transition-transform hover:bg-accent-strong hover:-translate-y-0.5"
+				class="rounded-full bg-accent-strong px-6 py-3 text-sm font-semibold text-accent-contrast transition-all hover:brightness-110 hover:-translate-y-0.5"
 			>
 				{t("nav.projects")}
 			</a>

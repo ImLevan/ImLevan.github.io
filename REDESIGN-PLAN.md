@@ -29,12 +29,18 @@ tarjetas glass, textura de grano, tipografía Syne (display) + Inter (body).
 - i18n ES/EN con switcher y hreflang
 
 ## Fases
-- [ ] Fase 0 — Seguridad: branch, plan, build baseline
-- [ ] Fase 1 — Cimientos: deps, astro.config, global.css con tokens, Layout nuevo
-- [ ] Fase 2 — i18n: rutas, diccionarios, migración de textos
-- [ ] Fase 3 — Componentes: Header, Hero, Sobre mí, Experiencia, Proyectos, Skills, Contacto, Footer
-- [ ] Fase 4 — Animación: Lenis + GSAP, reveals, timeline, cursor magnético
-- [ ] Fase 5 — Pulido: responsive, prefers-reduced-motion, SEO/hreflang, build final
+- [x] Fase 0 — Seguridad: branch, plan, build baseline
+- [x] Fase 1 — Cimientos: deps, astro.config, global.css con tokens, Layout nuevo
+- [x] Fase 2 — i18n: rutas, diccionarios, migración de textos
+- [x] Fase 3 — Componentes: Header, Hero, Sobre mí, Experiencia, Proyectos, Skills, Contacto, Footer
+- [x] Fase 4 — Animación: Lenis + GSAP, reveals, timeline, cursor magnético
+- [x] Fase 5 — Pulido: responsive, contraste (A11y 100), CLS 0 (Lighthouse), dimensiones de imágenes
+
+## Resultado Lighthouse (dev)
+- Accessibility: 100
+- Best Practices: 100
+- CLS: 0
+- SEO: 92 (solo el link "Learn more" del toolbar de dev de Astro, no existe en producción)
 
 ## Bugs a arreglar
 - ID duplicado `#portfolio`
