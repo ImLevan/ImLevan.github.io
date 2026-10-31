@@ -154,6 +154,11 @@ const filters = [
 			});
 			updateEmptyState();
 
+			// Medir la altura final ANTES de Flip.from: al lanzar la animación,
+			// Flip restaura momentáneamente las cards salientes para el fade-out
+			// y offsetHeight volvería a medir con todas las cards visibles.
+			const endHeight = grid?.offsetHeight;
+
 			// Animar el reacomodo sin sacar las cards del flujo (sin absolute):
 			// así la grid no colapsa y la sección siguiente no se superpone.
 			Flip.from(state, {
@@ -172,12 +177,16 @@ const filters = [
 
 			// Transicionar la altura del contenedor para que la sección
 			// siguiente baje/suba de forma fluida en vez de saltar.
-			if (grid && typeof startHeight === "number") {
+			if (
+				grid &&
+				typeof startHeight === "number" &&
+				typeof endHeight === "number"
+			) {
 				gsap.fromTo(
 					grid,
 					{ height: startHeight },
 					{
-						height: grid.offsetHeight,
+						height: endHeight,
 						duration: 0.55,
 						ease: "power2.inOut",
 						// Mata cualquier tween previo del mismo contenedor para
@@ -185,8 +194,11 @@ const filters = [
 						override: true,
 						onComplete: () => {
 							gsap.set(grid, { clearProps: "height" });
-							// Ya con la altura real: recalcular el límite de Lenis
-							refreshScroll();
+							// Doble rAF: el primer frame aplica el layout sin el
+							// height inline; el segundo ya mide el doc final real.
+							requestAnimationFrame(() =>
+								requestAnimationFrame(refreshScroll),
+							);
 						},
 					},
 				);
