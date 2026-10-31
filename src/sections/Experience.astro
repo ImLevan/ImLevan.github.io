@@ -13,7 +13,6 @@ const t = useTranslations(lang);
 		<SectionLabel index="03" label={t("experience.eyebrow")} />
 
 		<h2
-			data-reveal
 			class="mt-6 font-display text-3xl font-bold tracking-tight sm:text-4xl"
 		>
 			{t("experience.title")}
@@ -22,7 +21,6 @@ const t = useTranslations(lang);
 		<div class="relative mt-12">
 			<!-- Línea del timeline (se dibuja con GSAP en fase 4) -->
 			<div
-				data-timeline-line
 				class="absolute top-2 bottom-2 left-[19px] w-px bg-gradient-to-b from-accent via-border to-transparent sm:left-[23px]"
 				aria-hidden="true"
 			>
@@ -34,7 +32,7 @@ const t = useTranslations(lang);
 						const isWork = item.kind === "work";
 						const Icon = isWork ? Briefcase : GraduationCap;
 						return (
-							<li data-reveal class="relative flex gap-5 sm:gap-7">
+							<li class="relative flex gap-5 sm:gap-7">
 								<!-- Icono del hito -->
 								<div class="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border border-border bg-bg text-accent sm:size-12">
 									<Icon class="size-4 sm:size-5" />

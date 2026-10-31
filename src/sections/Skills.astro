@@ -23,7 +23,6 @@ const groups: { title: string; skills: Skill[] }[] = [
 		<SectionLabel index="05" label={t("skills.eyebrow")} />
 
 		<h2
-			data-reveal
 			class="mt-6 font-display text-3xl font-bold tracking-tight sm:text-4xl"
 		>
 			{t("skills.title")}
@@ -32,7 +31,7 @@ const groups: { title: string; skills: Skill[] }[] = [
 		<div class="mt-12 space-y-12">
 			{
 				groups.map((group) => (
-					<div data-reveal>
+					<div>
 						<h3 class="text-sm font-semibold tracking-[0.2em] text-text-faint uppercase">
 							{group.title}
 						</h3>
