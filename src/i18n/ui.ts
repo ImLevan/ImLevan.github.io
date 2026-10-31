@@ -109,7 +109,7 @@ export const ui = {
 	"projects.eyebrow": { es: "Proyectos", en: "Projects" },
 	"projects.title": { es: "Cosas que construí", en: "Things I've built" },
 	"projects.desc": {
-		es: "Algunos proyectos en los que estuve trabajando, alguno más ambicioso que otro. Espero que te parezcan interesantes.",
+		es: "Proyectos en los que estuve trabajando, alguno más ambicioso que otro. Espero que te parezcan interesantes.",
 		en: "Some of the projects I've been working on, some more ambitious than others. I hope you find them interesting.",
 	},
 	"projects.filterAll": { es: "Todos", en: "All" },
@@ -133,7 +133,7 @@ export const ui = {
 	"contact.eyebrow": { es: "Contacto", en: "Contact" },
 	"contact.title": { es: "Trabajemos juntos", en: "Let's work together" },
 	"contact.desc": {
-		es: "Si tenés un proyecto en mente, una idea que te gustaría discutir o simplemente quieres charlar sobre tecnología, no dudes en contactarme. Estoy acá para ayudarte a convertir tus ideas en realidades digitales.",
+		es: "Si tenés un proyecto en mente, una idea que te gustaría discutir o simplemente queres charlar sobre tecnología, no dudes en contactarme. Estoy acá para ayudarte a convertir tus ideas en realidades digitales.",
 		en: "If you have a project in mind, an idea you'd like to discuss or simply want to chat about tech, don't hesitate to reach out. I'm here to help you turn your ideas into digital realities.",
 	},
 	"contact.role": { es: "Desarrollador de Software", en: "Software Developer" },
