@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 
 const SERVER_PORT = 4321;
 // the url to access your blog during local development
@@ -18,4 +19,14 @@ if (isBuild) {
 export default defineConfig({
     server: { port: SERVER_PORT },
     site: BASE_URL,
+    vite: {
+        plugins: [tailwindcss()],
+    },
+    i18n: {
+        defaultLocale: "es",
+        locales: ["es", "en"],
+        routing: {
+            prefixDefaultLocale: false,
+        },
+    },
 });

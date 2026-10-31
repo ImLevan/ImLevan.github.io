@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import "@fontsource-variable/syne";
+@import "@fontsource-variable/inter";
+
+/* ============================================================
+   DESIGN TOKENS — "Oscuro premium vino"
+   Semantic tokens switch between dark (default) and light.
+   Class "light" on <html> toggles the theme.
+   ============================================================ */
+
+:root {
+    color-scheme: dark;
+
+    /* Dark theme (default) */
+    --bg: oklch(0.14 0.012 345);
+    --bg-subtle: oklch(0.17 0.014 345);
+    --surface: oklch(0.2 0.015 345);
+    --border: oklch(0.28 0.02 345);
+    --text: oklch(0.96 0.008 60);
+    --text-muted: oklch(0.72 0.012 55);
+    --text-faint: oklch(0.55 0.012 55);
+    --accent: oklch(0.65 0.18 10);
+    --accent-strong: oklch(0.55 0.19 12);
+    --accent-contrast: oklch(0.98 0.005 60);
+    --glow: color-mix(in oklab, var(--accent-strong) 22%, transparent);
+    --shadow-card: 0 24px 60px -24px rgb(0 0 0 / 0.7);
+}
+
+html.light {
+    color-scheme: light;
+
+    /* Light theme */
+    --bg: oklch(0.97 0.006 60);
+    --bg-subtle: oklch(0.94 0.008 60);
+    --surface: oklch(1 0 0);
+    --border: oklch(0.88 0.01 40);
+    --text: oklch(0.22 0.03 15);
+    --text-muted: oklch(0.45 0.02 25);
+    --text-faint: oklch(0.6 0.015 30);
+    --accent: oklch(0.48 0.19 14);
+    --accent-strong: oklch(0.4 0.17 15);
+    --accent-contrast: oklch(0.98 0.005 60);
+    --glow: color-mix(in oklab, var(--accent-strong) 14%, transparent);
+    --shadow-card: 0 24px 60px -30px oklch(0.3 0.05 15 / 0.25);
+}
+
+/* ============================================================
+   THEME — exposed to Tailwind utilities (inline = runtime-switchable)
+   ============================================================ */
+
+@theme inline {
+    --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Syne Variable", "Inter Variable", ui-sans-serif, sans-serif;
+
+    /* Semantic colors */
+    --color-bg: var(--bg);
+    --color-bg-subtle: var(--bg-subtle);
+    --color-surface: var(--surface);
+    --color-border: var(--border);
+    --color-text: var(--text);
+    --color-text-muted: var(--text-muted);
+    --color-text-faint: var(--text-faint);
+    --color-accent: var(--accent);
+    --color-accent-strong: var(--accent-strong);
+    --color-accent-contrast: var(--accent-contrast);
+
+    /* Wine scale (static brand palette) */
+    --color-wine-50: oklch(0.97 0.015 15);
+    --color-wine-100: oklch(0.94 0.035 15);
+    --color-wine-200: oklch(0.88 0.07 14);
+    --color-wine-300: oklch(0.79 0.115 12);
+    --color-wine-400: oklch(0.68 0.165 10);
+    --color-wine-500: oklch(0.57 0.195 12);
+    --color-wine-600: oklch(0.49 0.185 14);
+    --color-wine-700: oklch(0.4 0.155 15);
+    --color-wine-800: oklch(0.32 0.125 16);
+    --color-wine-900: oklch(0.25 0.1 17);
+    --color-wine-950: oklch(0.17 0.07 18);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg);
+    background-image: radial-gradient(
+        ellipse 90% 55% at 50% -12%,
+        var(--glow),
+        transparent 70%
+    );
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: var(--accent-strong);
+    color: var(--accent-contrast);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Scrollbar */
+@layer base {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+    }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+@utility glass {
+    background: color-mix(in oklab, var(--surface) 65%, transparent);
+    border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+@utility text-balance {
+    text-wrap: balance;
+}
+
+/* Film grain overlay (fixed, over everything, ignores pointer) */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+}
+
+html.light .noise-overlay {
+    opacity: 0.03;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
