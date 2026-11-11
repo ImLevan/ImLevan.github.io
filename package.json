@@ -19,7 +19,7 @@
     "astro": "^7.4.3",
     "astrocv": "file:",
     "gsap": "^3.15.0",
-    "nodemailer": "^10.2.1",
+    "nodemailer": "^10.4.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
